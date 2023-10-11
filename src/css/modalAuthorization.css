@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+}
+
+.backdrop-authorization {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: #4f2ee8;
+  overflow-y: scroll;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms linear, visibility 250ms linear;
+  display: flex;
+  align-items: center;
+}
+
+.backdrop-authorization.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.backdrop-authorization.is-hidden .modal {
+  transform: scale(0.75);
+}
+
+.modal-authorization {
+  padding: 40px 20px;
+  position: relative;
+  transform: scale(1);
+  max-width: 291px;
+  width: 100%;
+  height: 300px;
+  border-radius: 18px;
+  border: 2px solid #111;
+  background: #202024;
+  margin: 0 auto;
+  transition: all 250ms linear;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-button {
+  padding: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+}
+
+.modal-close-icon {
+  stroke: #f6f6f6;
+}
+
+.authorization-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.authorization-form-label {
+  position: relative;
+}
+
+.authorization-form-label span {
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  color: #f6f6f6;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.125; /* 112.5% */
+  letter-spacing: -0.16px;
+  text-transform: uppercase;
+}
+
+.authorization-form-label:focus-within > span,
+.authorization-form-label:hover > span {
+  transform: translateY(-35px);
+}
+
+.authorization-form-input {
+  padding-left: 24px;
+  padding-right: 24px;
+  color: #f6f6f6;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.125; /* 112.5% */
+  letter-spacing: -0.16px;
+  width: 243px;
+  height: 44px;
+  border-radius: 40px;
+  border: 2px solid #f6f6f6;
+  background-color: transparent;
+}
+
+.authorization-form-input:not(:placeholder-shown) + span {
+  transform: translateY(-35px);
+}
+
+.authorization-form-btn {
+  width: 294px;
+  height: 50px;
+  border-radius: 40px;
+  background-color: #f6f6f6;
+  color: #202024;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.125; /* 112.5% */
+  letter-spacing: -0.16px;
+  text-transform: uppercase;
+}
+
+.wrapper-switch {
+  padding-top: 14px;
+  display: flex;
+  gap: 20px;
+}
+
+.wrapper-switch-p {
+  color: rgba(246, 246, 246, 0.5);
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.28571; /* 128.571% */
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.action-auth {
+  color: #4f2ee8;
+  text-decoration-line: underline;
+}
