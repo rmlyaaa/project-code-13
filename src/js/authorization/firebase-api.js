@@ -24,6 +24,55 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
 
+export const createUser = async dateUser => {
+  await createUserWithEmailAndPassword(
+    auth,
+    dateUser.email,
+    dateUser.password
+  ).then(async () => {
+    await updateProfile(auth.currentUser, {
+      displayName: dateUser.name,
+    });
+  });
+};
+
+export const loginUser = async dateUser => {
+  await signInWithEmailAndPassword(
+    auth,
+    dateUser.email,
+    dateUser.password
+  ).then(async () => {
+    localStorage.setItem(USER_KEY, JSON.stringify(auth.currentUser.toJSON()));
+  });
+};
+
+export const logOutUser = async () => {
+  await signOut(auth).then(() => {
+    localStorage.removeItem(USER_KEY);
+  });
+};
+
+export async function loadDBList() {
+  const userId = JSON.parse(localStorage.getItem(USER_KEY)).uid;
+  return await get(child(ref(database), `users/${userId}`));
+}
+
+export async function saveDBList() {
+  const userId = JSON.parse(localStorage.getItem(USER_KEY)).uid;
+  return await set(ref(database, 'users/' + userId), {
+    books: books,
+  });
+}
+
+// save_books.addEventListener('click', () => {
+//   const userId = JSON.parse(localStorage.getItem(USER_KEY)).uid;
+//   set(ref(database, 'users/' + userId), {
+//     books: books,
+//   });
+// });
+
+////////////////////////////////////////////////////////////////
+
 // const form = document.querySelector('.create');
 // const forml = document.querySelector('.login');
 // const username = document.querySelector('.name');
@@ -220,13 +269,6 @@ const database = getDatabase(app);
 //     __v: 0,
 //   },
 // ];
-
-// save_books.addEventListener('click', () => {
-//   const userId = JSON.parse(localStorage.getItem(USER_KEY)).uid;
-//   set(ref(database, 'users/' + userId), {
-//     books: books,
-//   });
-// });
 
 // load_books.addEventListener('click', () => {
 //   const userId = JSON.parse(localStorage.getItem(USER_KEY)).uid;

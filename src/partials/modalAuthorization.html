@@ -1,12 +1,12 @@
-<div class="backdrop-authorization " data-modal>
+<div class="backdrop-authorization is-hidden-authorization" authorization-data-modal>
     <div class="modal-authorization">
-        <button class="modal-close-button" type="button" data-modal-close>
+        <button class="modal-close-button" type="button" authorization-data-modal-close>
             <svg class="modal-close-icon" width="20" height="20">
                 <use href="./img/authorization/icon-authorization.svg#close"></use>
             </svg>
         </button>
         <form class="authorization-form">
-            <label class="authorization-form-label">
+            <label class="authorization-form-label" label-name>
                 <input placeholder=" " required type="name" name="name" class="authorization-form-input">
                 <span class="label-name">Name</span>
             </label>
@@ -18,17 +18,24 @@
                 </svg>
             </label>
             <label class="authorization-form-label">
-                <input placeholder=" " required type="password" name="password" class="authorization-form-input">
+                <input placeholder=" " required minlength="8" type="password" name="password"
+                    class="authorization-form-input">
                 <span class="label-name">Password</span>
                 <svg class="label-icon" width="20" height="20">
                     <use href="./img/authorization/icon-authorization.svg#password"></use>
                 </svg>
             </label>
-            <button type="submit" class="authorization-form-btn">Sign up</button>
+            <button type="submit" class="authorization-form-btn create">Sign up</button>
         </form>
         <div class="wrapper-switch">
-            <button type="button" class="wrapper-switch-p action-auth">Sign up</button>
-            <button type="button" class="wrapper-switch-p">Sign in</button>
+            <button type="button" class="wrapper-switch-p action-auth" sign-up>Sign up</button>
+            <button type="button" class="wrapper-switch-p" sign-in>Sign in</button>
         </div>
+
+        <script type="module" src="./js/authorization/change-authorization.js"></script>
+        <script type="module" src="./js/authorization/open-authorization.js"></script>
+        <script type="module" src="./js/authorization/authorization.js"></script>
+        <script type="module" src="./js/authorization/firebase-bd.js"></script>
+
     </div>
-</div>s
+</div>
