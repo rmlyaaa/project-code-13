@@ -1,3 +1,6 @@
+import './js/category';
+
+
 /* active-link script */
 document.querySelectorAll('.nav-link').forEach(link => {
   if (link.href === window.location.href) {
