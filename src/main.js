@@ -1,3 +1,6 @@
+import './js/category';
+import './js/book-list-render';
+
 /* active-link script */
 import './js/authorization/open-authorization';
 

@@ -2,9 +2,11 @@
 @import url('./reset.css');
 @import url('./header.css');
 @import url('./modalAuthorization.css');
+@import url('./btn.css');
+@import url('./books.css');
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,6 +18,12 @@
   --dark-back-color: #111111;
   --sec-dark-back-color: #202024;
   --dec-color: #EAC645;
+
+  --text-color: #111111;
+  --accent-color: #404bbf;
+  --accent-text-color: #ffffff;
+  --border-color: #404bbf;
+  --animation-speed: 500ms ease-in-out;
 }
 
 body {
