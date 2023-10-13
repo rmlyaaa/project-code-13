@@ -85,7 +85,7 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  width: 370px;
+  width: 400px;
 }
 
 .nav-link {
@@ -106,7 +106,7 @@
   margin-left: 4px;
 }
 
-.active-link {
+.nav-link[aria-current="page"] {
   background-color: var(--dec-color);
   padding: 7px 16px;
   border-radius: 36px;
