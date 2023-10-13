@@ -39,6 +39,10 @@ function onEscClose(e) {
 
 function toggleModal() {
   refs.aForm.reset();
+  document.documentElement.className = 'no-scroll';
   refs.modal.classList.toggle('is-hidden-authorization');
   checkModal();
+  if (refs.modal.classList.contains('is-hidden-authorization')) {
+    document.documentElement.className = '';
+  }
 }
