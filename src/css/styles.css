@@ -14,7 +14,9 @@
   --sec-primary-back-color: #F6F6F6;
   --dark-back-color: #111111;
   --sec-dark-back-color: #202024;
-  --dec-color: #EAC645;
+  --dec-color-yellow: #EAC645;
+  --dec-color-blue: #4F2EE8;
+  ;
 }
 
 body {
