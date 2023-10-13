@@ -1,0 +1,16 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="password" viewBox="0 0 32 32">
+<path fill="none" stroke="#f6f6f6" style="stroke: var(--color1)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M23.5 14.5v-4.5c0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5v4.5M9.7 29.5h12.6c2.52 0 3.78 0 4.743-0.49 0.847-0.432 1.535-1.12 1.967-1.967 0.49-0.963 0.49-2.223 0.49-4.743v-0.6c0-2.52 0-3.78-0.49-4.743-0.432-0.847-1.12-1.535-1.967-1.967-0.963-0.49-2.223-0.49-4.743-0.49h-12.6c-2.52 0-3.78 0-4.743 0.49-0.847 0.431-1.535 1.12-1.967 1.967-0.49 0.963-0.49 2.223-0.49 4.743v0.6c0 2.52 0 3.78 0.49 4.743 0.431 0.847 1.12 1.535 1.967 1.967 0.963 0.49 2.223 0.49 4.743 0.49z"></path>
+</symbol>
+<symbol id="email" viewBox="0 0 41 32">
+<path fill="none" stroke="#f6f6f6" style="stroke: var(--color1)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286" d="M36.857 26.286l-11.388-10.286M15.673 16l-11.388 10.286M3.429 7.429l13.997 9.798c1.133 0.793 1.7 1.19 2.317 1.344 0.544 0.136 1.114 0.136 1.659 0 0.616-0.154 1.183-0.55 2.317-1.344l13.997-9.798M11.657 29.714h17.829c2.88 0 4.32 0 5.421-0.56 0.968-0.493 1.755-1.28 2.248-2.248 0.56-1.1 0.56-2.54 0.56-5.421v-10.971c0-2.88 0-4.32-0.56-5.421-0.493-0.968-1.28-1.754-2.248-2.248-1.1-0.561-2.54-0.561-5.421-0.561h-17.829c-2.88 0-4.32 0-5.421 0.561-0.968 0.493-1.754 1.28-2.248 2.248-0.561 1.1-0.561 2.54-0.561 5.421v10.971c0 2.88 0 4.32 0.561 5.421 0.493 0.968 1.28 1.754 2.248 2.248 1.1 0.56 2.54 0.56 5.421 0.56z"></path>
+</symbol>
+<symbol id="close" viewBox="0 0 32 32">
+<path fill="none" stroke="#f6f6f6" style="stroke: var(--color1)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="5.3333" d="M29.333 2.667l-26.667 26.667M2.667 2.667l26.667 26.667"></path>
+</symbol>
+<symbol id="icon-user-auth" viewBox="0 0 28 32">
+<path fill="#fff" style="fill: var(--color1, #fff)" d="M5.898 12h16.513l-7.423 8.391c-0.221 0.25-0.521 0.39-0.834 0.39s-0.613-0.14-0.834-0.39l-7.422-8.391z"></path>
+</symbol>
+</defs>
+</svg>
