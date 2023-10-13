@@ -255,4 +255,64 @@ body {
     line-height: 1.33333; /* 133.333% */
     letter-spacing: -0.18px;
   }
+
+  .profile-btn {
+    width: 184px;
+    height: 45px;
+    border-radius: 18px;
+    border: 1.5px solid #111;
+    background-color: #4f2ee8;
+    color: #fff;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.28571; /* 128.571% */
+    letter-spacing: -0.56px;
+    display: flex;
+    padding: 12px 14px;
+  }
+
+  .profile-btn.log-out {
+    background-color: #fff;
+    color: #111;
+  }
+
+  .profile-btn-icon {
+    margin-left: 88px;
+    stroke: #eac645;
+  }
+
+  .authorization-user {
+    width: 160px;
+    height: 37px;
+    border-radius: 36px;
+    background-color: #4f2ee8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 4px 12px;
+  }
+
+  .user-name {
+    color: #fff;
+    font-family: DM Sans;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.44px;
+  }
+
+  .user-icon {
+    fill: #fff;
+  }
+
+  .hiden-user-auth {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
 }
