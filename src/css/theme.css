@@ -1,0 +1,9 @@
+.dark {
+    background-color: var(--dark-back-color);
+  }
+  
+.dark .header {
+    background-color: var(--sec-dark-back-color); 
+    border: 1.5px solid var(--primary-back-color); 
+    border-radius: 0px 0px 8px 8px;
+  }
