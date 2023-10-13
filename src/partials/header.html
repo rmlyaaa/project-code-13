@@ -1,13 +1,46 @@
 <header class="header">
-  <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./page-2.html" class="nav-link">Page 2</a>
-      </li>
+  <div class="container header-cont">
+    <nav class="nav">
 
-      <li class="nav-item">
-        <a href="./page-3.html" class="nav-link">Page 3</a>
-      </li>
-    </ul>
-  </nav>
+      <div class="all-logo">
+        <a href="./index.html" class="header-logo link">
+          <svg height="24" width="24" class="logo-icon">
+            <use href="./img/icons.svg#icon-logo"></use>
+          </svg>
+          <svg height="13" width="77" class="logo-icon">
+            <use href="./img/icons.svg#icon-Bookshelf"></use>
+          </svg>
+        </a>
+      </div>
+
+      <ul class="nav-list">
+        <li class="nav-item">
+          <div class="nav-item-container"> <a href="./index.html" class="nav-link link active-link">Home</a> </div>
+        </li>
+        <li class="nav-item">
+          <div class="nav-item-container"> <a href="./shoping.html" class="nav-link link">
+              Shoping list
+              <svg class="shop-icon" height="19" width="19">
+                <use href="./img/icons.svg#icon-shop-list"></use>
+              </svg>
+            </a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="right-menu">
+        <div class="checkbox"></div>
+        <div class="profile"></div>
+      </div>
+
+      <div class="test">
+        <button type="button" class="mobile-menu-button">
+          <svg class="menu-icon js-open-menu" height="28" width="28">
+            <use href="./img/icons.svg#icon-menu"></use>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+
 </header>
