@@ -1,7 +1,11 @@
+import './change-authorization';
+import './authorization';
+
 const refs = {
   openModalBtn: document.querySelector('[authorization-data-modal-open]'),
   closeModalBtn: document.querySelector('[authorization-data-modal-close]'),
   modal: document.querySelector('[authorization-data-modal]'),
+  aForm: document.querySelector('.authorization-form'),
 };
 
 refs.openModalBtn.addEventListener('click', toggleModal);
@@ -34,6 +38,7 @@ function onEscClose(e) {
 }
 
 function toggleModal() {
+  refs.aForm.reset();
   refs.modal.classList.toggle('is-hidden-authorization');
   checkModal();
 }

@@ -1,6 +1,6 @@
 import { createUser, loginUser, logOutUser } from './firebase-api';
 import { loadBDList } from './firebase-bd';
-import Notiflix from 'notiflix';
+import { showError } from '../handler';
 
 const USER_KEY = 'AUTHENTCATION_USER';
 
@@ -52,21 +52,9 @@ function signUp() {
       signIn();
     })
     .catch(error => {
-      /// use notflix eror 'email-already-in-use'
-
-      console.log(error.code);
+      showError('This email already in use', 'center-center');
     });
 }
-Notiflix.Notify.failure(`sad`, {
-  position: 'center-center',
-  timeout: 2000,
-  width: '400px',
-  failure: {
-    background: '#fff',
-    textColor: '#ff5549',
-    notiflixIconColor: '#ff5549',
-  },
-});
 
 function signIn() {
   const dateUser = {
@@ -78,12 +66,11 @@ function signIn() {
       refs.modal.classList.toggle('is-hidden-authorization');
       loadBDList();
       markupUser();
+      refs.aForm.reset();
     })
     .catch(error => {
-      /// use notflix eror 'invalid-login-credentials'
-      console.log(error.code);
+      showError('Invalid login or password', 'center-center');
     });
-  refs.aForm.reset();
 }
 
 function logOut() {
