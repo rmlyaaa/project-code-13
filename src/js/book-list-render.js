@@ -1,8 +1,7 @@
-import { fetchCategory, fetchBooksOfCategory } from './fetch-api';
+import { getBooksByCategory, getTopBooks } from './category';
+import { fetchCategory } from './books-api';
 
 const bookCategories = document.querySelector('.book-categories-js');
-const listBooks = document.querySelector('.books-js');
-const title = document.querySelector('.title-js');
 
 fetchCategory()
   .then(response => renderCategoryList(response.data))
@@ -24,35 +23,26 @@ function renderCategoryList(arr) {
 bookCategories.addEventListener('click', onCategoryClick);
 
 function onCategoryClick(event) {
-  listBooks.innerHTML = '';
+  const target = event.target;
   const targetCategory = event.target.dataset.list;
-  if (targetCategory === 'All categories') {
-    title.textContent = 'Best Sellers Books';
 
-    fetchTopBooks()
-      .then(response => renderTopBooks(response.data))
-      .catch(error => console.log(error));
-  } else {
-    title.textContent = targetCategory;
+  const array = bookCategories.children;
 
-    fetchBooksOfCategory(targetCategory)
-      .then(response => renderBooksOfCategories(response.data))
-      .catch(error => console.log(error));
+  for (let element of array) {
+    if (!target.classList.contains('list-item')) {
+      return;
+    }
+
+    if (target.textContent === element.textContent) {
+      target.classList.add('active-category');
+    } else {
+      element.classList.remove('active-category');
+    }
   }
-}
 
-function renderBooksOfCategories(arr) {
-  const markup = arr
-    .map(
-      ({ author, book_image, _id, title }) => `<li data-id="${_id}">
-         <div class="thumb">
-          <img src="${book_image}" alt="" width="335" height="485">
-         </div>
-          <h2>${title}</h2>
-          <p>${author}</p>
-          </li>`
-    )
-    .join('');
-
-  listBooks.innerHTML = markup;
+  if (targetCategory === 'All categories') {
+    getTopBooks();
+  } else {
+    getBooksByCategory(targetCategory);
+  }
 }

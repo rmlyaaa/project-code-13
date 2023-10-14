@@ -111,4 +111,4 @@ function nameDivide(fullName) {
   };
 }
 
-export { getBooksByCategory };
+export { getBooksByCategory, getTopBooks };

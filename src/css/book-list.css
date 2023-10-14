@@ -1,0 +1,122 @@
+.wrapper {
+  padding: 40px 20px 40px 20px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list-item {
+  margin-bottom: 24px;
+  color: rgba(17, 17, 17, 0.6);
+  font-family: DM Sans;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.32px;
+}
+
+.list-item:last-child {
+  margin-bottom: 0;
+}
+
+.book-category-list {
+  margin-bottom: 40px;
+  max-height: 228px;
+  overflow-y: scroll;
+  margin: 0 auto;
+  max-width: 375px;
+  cursor: pointer;
+}
+
+.book-category-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.book-category-list::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: var(--scroll-bar-color);
+}
+
+@media screen and (min-width: 428px) {
+  .wrapper {
+    max-width: 375px;
+  }
+
+  .main-container {
+    padding-bottom: 40px;
+  }
+  /* .main-container {
+    max-width: 375px;
+  } */
+}
+
+@media screen and (min-width: 768px) {
+  .list-item {
+    margin-bottom: 32px;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.36px;
+  }
+
+  .book-category-list {
+    margin: 0;
+    max-height: 472px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .wrapper {
+    max-width: 768px;
+    padding: 40px 32px 100px 32px;
+  }
+
+  .main-container {
+    margin-bottom: 100px;
+    display: flex;
+    gap: 32px;
+  }
+
+  .main-container .item {
+    flex-basis: calc((100% - 32px) / 2);
+  }
+
+  .support {
+    width: 335px;
+  }
+
+  .book-category-list {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 40px; */
+    padding: 40px 24px 72px 24px;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main-container {
+    margin: 0;
+    min-width: 356px;
+    padding: 0;
+  }
+
+  .book-name {
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .active-category {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--dec-color-blue);
+  }
+}
