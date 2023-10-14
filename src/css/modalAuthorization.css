@@ -79,6 +79,11 @@ body {
   stroke: var(--second-color);
 }
 
+.modal-close-icon:hover,
+.modal-close-icon:focus {
+  stroke: #4f2ee8;
+}
+
 .authorization-form {
   display: flex;
   flex-wrap: wrap;
@@ -154,6 +159,14 @@ body {
   line-height: 1.125; /* 112.5% */
   letter-spacing: -0.16px;
   text-transform: uppercase;
+  transition: transform 250ms linear;
+}
+
+.wrapper-switch-p:hover,
+.wrapper-switch-p:focus,
+.authorization-form-btn:hover,
+.authorization-form-btn:focus {
+  transform: scale(1.05);
 }
 
 .wrapper-switch {
@@ -174,6 +187,7 @@ body {
   cursor: pointer;
   border: none;
   background-color: transparent;
+  transition: transform 250ms linear;
 }
 
 .action-auth {
@@ -271,6 +285,7 @@ body {
     letter-spacing: -0.56px;
     display: flex;
     padding: 12px 14px;
+    transition: box-shadow 250ms linear;
   }
 
   .profile-btn.log-out {
@@ -281,6 +296,11 @@ body {
   .profile-btn-icon {
     margin-left: 88px;
     stroke: #eac645;
+  }
+
+  .profile-btn:hover,
+  .profile-btn:focus {
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
   }
 
   .authorization-user {
