@@ -16,6 +16,10 @@ body {
   --btn-text-xolor: #202024;
 } */
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .backdrop-authorization {
   position: fixed;
   top: 0;
@@ -23,7 +27,6 @@ body {
   width: 100vw;
   height: 100%;
   background-color: #502ee8bb;
-  overflow-y: scroll;
   opacity: 1;
   visibility: visible;
   transition: opacity 250ms linear, visibility 250ms linear;

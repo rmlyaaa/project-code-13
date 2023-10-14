@@ -1,4 +1,5 @@
 import { topBooks, bookByCategory } from './books-api.js';
+import { showError } from './messages.js';
 
 const refs = {
   categoriesContainer: document.querySelector('.js-books-container'),
@@ -6,7 +7,22 @@ const refs = {
 };
 
 getTopBooks();
-// getBooksByCategory();
+
+refs.categoriesContainer.addEventListener('click', onBooksCategotyClick);
+
+function onBooksCategotyClick(evt) {
+  if (evt.target.nodeName !== 'BUTTON') {
+    return;
+  }
+
+  const currentCategory = evt.target.dataset.category;
+  if (!currentCategory) {
+    showError('There is no category to show');
+    return;
+  }
+
+  getBooksByCategory(currentCategory);
+}
 
 async function getTopBooks() {
   try {
@@ -27,12 +43,11 @@ async function getTopBooks() {
 
 async function getBooksByCategory(categoryName) {
   try {
-    const booksArr = await bookByCategory(categoryName);
+    const data = await bookByCategory(categoryName);
     if (!data.length) {
       showError('Sorry, there are no books', 'center-center');
       return;
     }
-
     refs.categoriesContainer.innerHTML = await createBooksByCategoryMarkup(
       categoryName,
       data
@@ -55,14 +70,19 @@ function createTopBooksMarkup(fullCategoryName, arrCategories) {
           books
             .map(({ book_image, author, title }) => {
               return `<li class="book-item">
-            <a href="" class="book-link link">
-              <img class="book-img" src="${book_image}" alt="${title}" loading="lazy"/>
-              <div class="book-wrapper">
-                <h3 class="book-name">${title}</h3>
-                <p class="book-autor">${author}</p>
-              </div>
-            </a>
-          </li>`;
+              <a href="" class="book-link link">
+                <div class="book-thumb-img">
+                  <img class="book-img" src="${book_image}" alt="${title}" loading="lazy"/>
+                  <div class="overlay">
+                    <p>Quick view</p>
+                  </div>
+                </div>
+                <div class="book-wrapper">
+                  <h3 class="book-name">${title}</h3>
+                  <p class="book-autor">${author}</p>
+                </div>
+              </a>
+            </li>`;
             })
             .join('') +
           `</ul>
@@ -72,7 +92,6 @@ function createTopBooksMarkup(fullCategoryName, arrCategories) {
       })
       .join('');
 
-  //   console.log(markup);
   return markup;
 }
 
@@ -81,12 +100,17 @@ function createBooksByCategoryMarkup(fullCategoryName, arrCategories) {
   const markup =
     `<h2 class="book-category-name">${name}<span class="book-category-name-accent">${nameAccent}</span></h2>
     <div class="category-item">
-    <ul class="book-list">` +
+    <ul class="book-list book-list-in-categoty">` +
     arrCategories
       .map(({ book_image, author, title }) => {
-        return `<li class="book-item">
+        return `<li class="book-item-in-categoty">
               <a href="" class="book-link link">
-                <img class="book-img" src="${book_image}" alt="${title}" loading="lazy"/>
+                <div class="book-thumb-img">
+                  <img class="book-img" src="${book_image}" alt="${title}" loading="lazy"/>
+                  <div class="overlay">
+                    <p>Quick view</p>
+                  </div>
+                </div>
                 <div class="book-wrapper">
                   <h3 class="book-name">${title}</h3>
                   <p class="book-autor">${author}</p>
@@ -96,7 +120,6 @@ function createBooksByCategoryMarkup(fullCategoryName, arrCategories) {
       })
       .join('') +
     `</ul>
-    <button type="button" class="see-more-btn btn" data-category="${list_name}">See more</button>
     </div>`;
 
   return markup;
@@ -109,3 +132,5 @@ function nameDivide(fullName) {
     nameAccent: fullName.substring(lastSpace),
   };
 }
+
+export { getBooksByCategory };
