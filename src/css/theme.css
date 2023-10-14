@@ -1,9 +1,26 @@
 .dark {
-    background-color: var(--dark-back-color);
+    background-color: var( --color-secondary);
   }
   
+.dark .container {
+  background-color: var(--dark-back-color);
+}
+
 .dark .header {
     background-color: var(--sec-dark-back-color); 
     border: 1.5px solid var(--primary-back-color); 
     border-radius: 0px 0px 8px 8px;
   }
+
+  .dark .nav-item, .shop-icon {
+    color: var(--primary-back-color);
+    fill: var(--primary-back-color);
+  }
+
+.dark .nav-item:hover, .nav-item:focus,
+.dark .shop-icon:hover,.shop-icon:focus {
+  color: var(--dark-back-color);
+  fill: var(--dark-back-color);
+}
+
+
