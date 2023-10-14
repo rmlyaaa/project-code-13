@@ -16,10 +16,11 @@
   --sec-primary-back-color: #f6f6f6;
   --dark-back-color: #111111;
   --sec-dark-back-color: #202024;
-  --dec-color-yellow: #EAC645;
-  --dec-color-blue: #4F2EE8;
+  --dec-color-yellow: #eac645;
+  --dec-color-blue: #4f2ee8;
 
   --text-color: #111111;
+  --sec-text-color: #b4afaf;
   --accent-color: #404bbf;
   --accent-text-color: #ffffff;
   --border-color: #404bbf;
