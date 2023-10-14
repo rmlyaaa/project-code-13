@@ -1,28 +1,40 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
+@import url('./fonts.css');
 @import url('./reset.css');
-@import url('./vite-promo.css');
 @import url('./header.css');
+@import url('./modalAuthorization.css');
+@import url('./btn.css');
+@import url('./books.css');
 
 /* Modal */
 @import url('./modal.css');
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --primary-back-color: #ffffff;
+  --sec-primary-back-color: #f6f6f6;
+  --dark-back-color: #111111;
+  --sec-dark-back-color: #202024;
+  --dec-color-yellow: #EAC645;
+  --dec-color-blue: #4F2EE8;
+
+  --text-color: #111111;
+  --accent-color: #404bbf;
+  --accent-text-color: #ffffff;
+  --border-color: #404bbf;
+  --animation-speed: 500ms ease-in-out;
+}
+
+body {
+  padding-top: 0;
+  margin: 0;
+  font-family: DM Sans;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: var(--sec-primary-back-color);
+  color: var(--dark-back-color);
 }
