@@ -3,10 +3,19 @@ import amazonImg1x from '../img/shoping-list/amazon-icon1x.png';
 import amazonImg2x from '../img/shoping-list/amazon-icon1x.png';
 import appleImg1x from '../img/shoping-list/applebook-icon1x.png';
 import appleImg2x from '../img/shoping-list/applebook-icon2x.png';
+import emptyMob1x from '../img/shoping-list/empty-mobile@1x.png';
+import emptyMob2x from '../img/shoping-list/empty-mobile@2x.png';
+import emptyTab1x from '../img/shoping-list/empty-tablet@1x.png';
+import emptyTab2x from '../img/shoping-list/empty-tablet@2x.png';
+import Pagination from 'tui-pagination'; 
+
+
 
 const STORAGE_KEY_SHOPPING_LIST = 'shoppingList-localSorage';
+const container = document.getElementById('tui-pagination-container');
+const divEl = document.querySelector('.shopping-list-js');
 
-const divEl = document.querySelector('.shopping-list');
+
 
 
 const BASE_URL = 'https://books-backend.p.goit.global/books/';
@@ -21,20 +30,27 @@ fetchBookTop().then(data => {
 });
 
 const shopListLocStor = JSON.parse(localStorage.getItem(STORAGE_KEY_SHOPPING_LIST)) || [];
-
-let itemsOnPage = shopListLocStor.map(el => el.books).slice(14, 19);
+const itemsOnPage = shopListLocStor.map(el => el.books).slice(9, 11);
 console.log(itemsOnPage);
 
-// function checkLocalStorage() {
-//   if (JSON.parse(STORAGE_KEY_SHOPPING_LIST, ))
-// }
+function createShoppingListPage() {
+  if(shopListLocStor.length === 0) {
+    renderMarkupEmptyShopList();
+  } else {
+    const cardsTotal = shopListLocStor.length;
+    initPagination(cardsTotal);
+    renderMarkupOnShoppingList(shopListLocStor, currentNumberOfPages)
+  }
+}
+
 
 // функція створення карток в Shopping List
 
-function renderMarkupOnShoppingList(itemsOnPage) {
-      return itemsOnPage[0].map(
+function renderMarkupOnShoppingList(arrBooks, numberOfPage) {
+  const markup = itemsOnPage[0]
+      itemsOnPage[0].map(
         ({
-           _id,
+          _id,
           title,
           author,
           description,
@@ -42,8 +58,8 @@ function renderMarkupOnShoppingList(itemsOnPage) {
           book_image,
           amazon_product_url,
           buy_links: [,apple],
-        }) => {
-          return `
+        }) => 
+           `
           <li class="shopping-list-card">
             <div class="">
               <img class="shopping-card-img" src="${book_image}" alt="${title}" />
@@ -55,7 +71,6 @@ function renderMarkupOnShoppingList(itemsOnPage) {
               </svg>
             </button>
               <div class="shopping-message">
-              
                 <h2 class="shopping-card-title">${title}</h2>
                 <p class="shopping-card-category">${list_name}</p>   
                 <p class="shopping-card-description">${description}</p>
@@ -82,11 +97,38 @@ function renderMarkupOnShoppingList(itemsOnPage) {
                
                 </div>
           </li>
-              `;
-            }
+              `
+            
           ).join('');
+
+          divEl.insertAdjacentHTML('beforeend', markup);
       }
       
-      divEl.insertAdjacentHTML('beforeend', renderMarkupOnShoppingList(itemsOnPage));
 
 
+// функція створення пустого кошика в Shopping List
+
+// function renderMarkupEmptyShopList() {
+//   const markup = `
+//   <div class="shopping-list-empty">
+//   <p class="shopping-text-empty">This page is empty, add some books and proceed to order.</p>
+//   <picture><sourse srcset="
+//   srcset="
+//       ${emptyTab1x} 1x,
+//       ${emptyTab2x} 2x
+//         "
+//   media="(min-width: 768px)"
+//         />
+//    <img class="hopping-img-empty"
+//     srcset="
+//       ${emptyMob1x} 1x,
+//       ${emptyMob2x} 2x
+//             "
+//     src="${emptyMob1x}" alt="Empty Shopping list"
+//   "></sourse>
+//   </picture>
+//   </div>`
+
+//   divEl.innerHTML = markup;
+// }
+// renderMarkupEmptyShopList()
