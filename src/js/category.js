@@ -1,4 +1,5 @@
 import { topBooks, bookByCategory } from './books-api.js';
+import { showError } from './messages.js';
 
 const refs = {
   categoriesContainer: document.querySelector('.js-books-container'),
@@ -6,7 +7,22 @@ const refs = {
 };
 
 getTopBooks();
-//getBooksByCategory('Childrens Middle Grade Hardcover');
+
+refs.categoriesContainer.addEventListener('click', onBooksCategotyClick);
+
+function onBooksCategotyClick(evt) {
+  if (evt.target.nodeName !== 'BUTTON') {
+    return;
+  }
+
+  const currentCategory = evt.target.dataset.category;
+  if (!currentCategory) {
+    showError('There is no category to show');
+    return;
+  }
+
+  getBooksByCategory(currentCategory);
+}
 
 async function getTopBooks() {
   try {
@@ -57,6 +73,9 @@ function createTopBooksMarkup(fullCategoryName, arrCategories) {
               <a href="" class="book-link link">
                 <div class="book-thumb-img">
                   <img class="book-img" src="${book_image}" alt="${title}" loading="lazy"/>
+                  <div class="overlay">
+                    <p>Quick view</p>
+                  </div>
                 </div>
                 <div class="book-wrapper">
                   <h3 class="book-name">${title}</h3>
@@ -88,6 +107,9 @@ function createBooksByCategoryMarkup(fullCategoryName, arrCategories) {
               <a href="" class="book-link link">
                 <div class="book-thumb-img">
                   <img class="book-img" src="${book_image}" alt="${title}" loading="lazy"/>
+                  <div class="overlay">
+                    <p>Quick view</p>
+                  </div>
                 </div>
                 <div class="book-wrapper">
                   <h3 class="book-name">${title}</h3>
