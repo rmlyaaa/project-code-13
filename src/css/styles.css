@@ -4,6 +4,7 @@
 @import url('./modalAuthorization.css');
 @import url('./btn.css');
 @import url('./books.css');
+@import url('./loader.css');
 
 :root {
   font-synthesis: none;
@@ -28,6 +29,7 @@
 }
 
 body {
+  position: relative;
   padding-top: 0;
   margin: 0;
   font-family: DM Sans;
