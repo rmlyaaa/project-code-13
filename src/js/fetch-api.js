@@ -10,8 +10,4 @@ async function fetchBooksOfCategory(request) {
   return await axios.get(`${BASE_URL}category?category=${request}`);
 }
 
-async function fetchTopBooks() {
-  return await axios.get(`${BASE_URL}top-books`);
-}
-
-export { fetchCategory, fetchBooksOfCategory, fetchTopBooks };
+export { fetchCategory, fetchBooksOfCategory };
