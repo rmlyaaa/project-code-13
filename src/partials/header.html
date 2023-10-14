@@ -29,15 +29,36 @@
       </ul>
 
       <div class="right-menu">
-      <div class="toggle-switch">
-        <span>
-          <label for="them-switch" class="switch">
-            <input id="them-switch" type="checkbox">
-            <span class="round slider"></span>
-          </label>
-        </span>
-      </div>
+        <div class="toggle-switch">
+          <span>
+            <label for="them-switch" class="switch">
+              <input id="them-switch" type="checkbox">
+              <span class="round slider"></span>
+            </label>
+          </span>
+        </div>
         <div class="profile"></div>
+        <div class="checkbox"></div>
+        <div class="profile">
+          <div class="authorization-user hiden-user-auth">
+            <img srcset="./img/authorization/user-2x.png 2x" src="./img/authorization/user.png" alt="" width="37"
+              height="37" class="user-image">
+            <p class="user-name">Name</p>
+            <svg class="user-icon" width="23" height="26">
+              <use href="./img/authorization/icon-authorization.svg#icon-user-auth"></use>
+            </svg>
+          </div>
+          <button type="button" class="profile-btn" authorization-data-modal-open>Sign up
+            <svg class="profile-btn-icon" width="20" height="20">
+              <use href="./img/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
+          <button type="button" class="profile-btn log-out hiden-user-auth">Log out
+            <svg class="profile-btn-icon" width="20" height="20">
+              <use href="./img/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
+        </div>
       </div>
 
       <div class="test">
