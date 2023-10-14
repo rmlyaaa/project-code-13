@@ -1,3 +1,27 @@
+.books-categories-sections {
+  max-width: 996px;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+@media screen and (max-width: 377px) {
+  .books-categories-sections {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (min-width: 377px) and (max-width: 767px) {
+  .books-categories-sections {
+    max-width: 335px;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1139px) {
+  .books-categories-sections {
+    max-width: 704px;
+  }
+}
+
 .book-category-name-accent {
   color: var(--accent-color);
 }
@@ -26,33 +50,55 @@
 
 .book-list {
   display: flex;
+  /* justify-content: center; */
   column-gap: 24px;
   margin-bottom: 8px;
   --indent: 24;
-  --indent-quantity: 0;
-  --item: 1;
+  --indent-quantity: 4;
+  --item: 5;
 }
 
-@media screen and (min-width: 768px) {
+.book-list-in-categoty {
+  flex-wrap: wrap;
+  row-gap: 40px;
+}
+
+@media screen and (max-width: 767px) {
   .book-list {
-    --indent-quantity: 2;
-    --item: 3;
+    --indent-quantity: 0;
+    --item: 1;
     margin-bottom: 20px;
   }
 }
-@media screen and (min-width: 1140px) {
+@media screen and (min-width: 767px) and (max-width: 1139px) {
   .book-list {
-    --indent-quantity: 4;
-    --item: 5;
+    --indent-quantity: 2;
+    --item: 3;
     margin-bottom: 32px;
   }
 }
 
-.book-item {
+.book-item,
+.book-item-in-categoty {
   display: block;
   flex-basis: calc(
     (100% - var(--indent) * var(--indent-quantity)) / var(--item)
   );
+  max-width: 180px;
+}
+
+@media screen and (max-width: 767px) {
+  .book-item,
+  .book-item-in-categoty {
+    max-width: 335px;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1139px) {
+  .book-item,
+  .book-item-in-categoty {
+    max-width: 218px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -61,21 +107,46 @@
   }
 }
 
-@media screen and (max-width: 1139px) {
+@media screen and (min-width: 767px) and (max-width: 1139px) {
   .book-item:nth-child(n + 4) {
     display: none;
   }
 }
 
-.book-wrapper {
-  display: block;
+.book-thumb-img {
+  height: 256px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 377px) {
+  .book-thumb-img {
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 377px) and (max-width: 767px) {
+  .book-thumb-img {
+    height: 485px;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1139px) {
+  .book-thumb-img {
+    height: 316px;
+  }
 }
 
 .book-img {
-  border-radius: 8px;
-  border-width: 0px;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
-  margin-bottom: 14px;
+
+  border-radius: 8px;
+}
+
+.book-wrapper {
+  display: block;
 }
 
 .book-name {
