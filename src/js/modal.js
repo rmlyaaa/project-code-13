@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { saveBDBookList } from './authorization/firebase-bd';
 
 const scrollControl = {
   scrollPosition: 0,
@@ -45,7 +46,9 @@ refs.closeModal.addEventListener('click', closeModalWindow);
 function openModalWindow(evt) {
   evt.preventDefault();
   const clickedElement = evt.target;
-  const closestLi = clickedElement.closest('.book-item, .book-item-in-categoty');
+  const closestLi = clickedElement.closest(
+    '.book-item, .book-item-in-categoty'
+  );
   if (!closestLi) {
     return;
   }
@@ -95,7 +98,6 @@ function onEscPressed(evt) {
 async function getBookOnId(id) {
   const url = 'https://books-backend.p.goit.global/books/';
   try {
-  
     const getData = await axios.get(`${url}${id}`);
     return getData.data;
   } catch (error) {
@@ -113,10 +115,12 @@ function bookAddStorage(evt) {
   refs.modalBtnAddEl.classList.add('is-hidden');
   refs.modalBtnDelEl.classList.remove('is-hidden');
   refs.modaltextBottom.classList.remove('is-hidden');
+  saveBDBookList();
 }
 
 refs.modalBtnDelEl.addEventListener('click', bookDelStorage);
 function bookDelStorage(evt) {
+  saveBDBookList();
   evt.preventDefault();
 
   const savedData = JSON.parse(localStorage.getItem('ListOfBooks'));

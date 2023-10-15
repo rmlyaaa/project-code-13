@@ -9,6 +9,7 @@ import emptyTab1x from '../img/shoping-list/empty-tablet@1x.png';
 import emptyTab2x from '../img/shoping-list/empty-tablet@2x.png';
 
 import Pagination from 'tui-pagination';
+import { saveBDBookList } from './authorization/firebase-bd';
 
 // функцію видалити------------------------------------------
 // const BASE_URL = 'https://books-backend.p.goit.global/books/';
@@ -187,6 +188,7 @@ function deleteCard(evt) {
     );
     createShoppingListPage();
   }
+  saveBDBookList();
 }
 
 //-------- Функція зміни кількості відображення карток в залежності від ширини екрану-----------

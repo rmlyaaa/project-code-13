@@ -59,11 +59,11 @@ export async function loadDBList() {
   }
 }
 
-export async function saveDBList() {
+export async function saveDBList(books) {
   if (localStorage.getItem(USER_KEY)) {
-    const userId = JSON.parse().uid;
+    const userId = JSON.parse(localStorage.getItem(USER_KEY)).uid;
     return await set(ref(database, 'users/' + userId), {
-      books: books,
+      books: JSON.stringify(books),
     });
   }
 }

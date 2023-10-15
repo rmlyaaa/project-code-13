@@ -238,6 +238,7 @@
     max-width: 768px;
     max-height: 72px;
     padding: 14px 32px;
+    margin: 0 auto;
   }
 
   .shopping-list-title {
