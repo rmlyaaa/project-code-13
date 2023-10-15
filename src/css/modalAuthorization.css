@@ -295,6 +295,8 @@ body {
   .profile-btn.log-out {
     background-color: #fff;
     color: #111;
+    position: relative;
+    z-index: 2;
   }
 
   .profile-btn-icon {
