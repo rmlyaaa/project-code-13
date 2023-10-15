@@ -29,7 +29,7 @@ if (localStorage.getItem('ListOfBooks') === null) {
 }
 
 const refs = {
-  openModal: document.querySelector('.right-wrapper'),
+  openModal: document.querySelector('.categories-container'),
   closeModal: document.querySelector('.modalWindow-close'),
   modalWindow: document.querySelector('#modalWindow'),
   modalCard: document.querySelector('.modal-card'),
