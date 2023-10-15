@@ -1,18 +1,16 @@
 <main class="wrapper">
   <aside class="main-container">
-    <ul class="book-categories-js book-category-list item">
-      <li
-        class="list-item active-category permanent-item-js"
-        data-list="All categories"
-        hidden
-      >
-        All categories
-      </li>
-    </ul>
-    <div class="support item"></div>
+    <section class="item book-category-wrap">
+      <ul class="book-categories-js book-category-list">
+        <li class="list-item active-category permanent-item-js" data-list="All categories" hidden>
+          All categories
+        </li>
+      </ul>
+    </section>
+    <div class="support item">
+      <load src="/partials/support-ukraine.html" />
+    </div>
   </aside>
 
-  <section class="books-categories-sections">
-    <div class="categories-container js-books-container"></div>
-  </section>
+  <load src="/partials/category.html" />
 </main>

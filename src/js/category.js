@@ -21,6 +21,16 @@ function onBooksCategoryClick(evt) {
     return;
   }
 
+  const listArr = document.querySelectorAll('.list-item');
+
+  for (let element of listArr) {
+    if (element.textContent === currentCategory) {
+      element.classList.add('active-category');
+    } else {
+      element.classList.remove('active-category');
+    }
+  }
+
   getBooksByCategory(currentCategory);
 }
 
@@ -80,8 +90,8 @@ function createTopBooksMarkup(fullCategoryName, arrCategories) {
           <h3 class="book-category-subname">${list_name}</h3>
         <ul class="book-list">` +
           books
-            .map(({ book_image, author, title }) => {
-              return `<li class="book-item">
+            .map(({ book_image, author, title, _id }) => {
+              return `<li class="book-item" id="${_id}">
               <a href="" class="book-link link">
                 <div class="book-thumb-img">
                   <img class="book-img" src="${book_image}" alt="${title}" loading="lazy"/>
@@ -114,8 +124,8 @@ function createBooksByCategoryMarkup(fullCategoryName, arrCategories) {
     <div class="category-item">
     <ul class="book-list book-list-in-categoty">` +
     arrCategories
-      .map(({ book_image, author, title }) => {
-        return `<li class="book-item-in-categoty">
+      .map(({ book_image, author, title, _id }) => {
+        return `<li class="book-item-in-categoty" id="${_id}">
               <a href="" class="book-link link">
                 <div class="book-thumb-img">
                   <img class="book-img" src="${book_image}" alt="${title}" loading="lazy"/>
