@@ -1,6 +1,7 @@
 import { createUser, loginUser, logOutUser } from './firebase-api';
 import { loadBDList } from './firebase-bd';
 import { showError } from '../handler';
+import { toggleLoader } from '../loader';
 
 const USER_KEY = 'AUTHENTCATION_USER';
 
@@ -49,11 +50,14 @@ function signUp() {
   };
   createUser(dateUser)
     .then(() => {
+      toggleLoader();
       signIn();
     })
     .catch(error => {
+      toggleLoader();
       showError('This email already in use', 'center-center');
-    });
+    })
+    .finally(toggleLoader());
 }
 
 function signIn() {
@@ -63,14 +67,17 @@ function signIn() {
   };
   loginUser(dateUser)
     .then(() => {
+      toggleLoader();
       refs.modal.classList.toggle('is-hidden-authorization');
       loadBDList();
       markupUser();
       refs.aForm.reset();
     })
     .catch(error => {
+      toggleLoader();
       showError('Invalid login or password', 'center-center');
-    });
+    })
+    .finally(toggleLoader());
 }
 
 function logOut() {

@@ -1,11 +1,11 @@
 import { topBooks, bookByCategory } from './books-api.js';
 import { showError } from './messages.js';
+import { toggleLoader } from './loader.js';
 
 const refs = {
   categoriesContainer: document.querySelector('.js-books-container'),
   booksMenu: document.querySelector('.booksMenu'),
 };
-
 getTopBooks();
 
 refs.categoriesContainer.addEventListener('click', onBooksCategotyClick);
@@ -26,7 +26,13 @@ function onBooksCategotyClick(evt) {
 
 async function getTopBooks() {
   try {
-    const data = await topBooks();
+    const data = await topBooks()
+      .then(response => {
+        toggleLoader();
+        return response;
+      })
+      .catch(() => toggleLoader())
+      .finally(toggleLoader());
     if (!data.length) {
       showError('Sorry, there are no books', 'center-center');
       return;
@@ -43,7 +49,13 @@ async function getTopBooks() {
 
 async function getBooksByCategory(categoryName) {
   try {
-    const data = await bookByCategory(categoryName);
+    const data = await bookByCategory(categoryName)
+      .then(response => {
+        toggleLoader();
+        return response;
+      })
+      .catch(() => toggleLoader())
+      .finally(toggleLoader());
     if (!data.length) {
       showError('Sorry, there are no books', 'center-center');
       return;
