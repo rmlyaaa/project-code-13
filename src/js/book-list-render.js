@@ -2,9 +2,13 @@ import { getBooksByCategory, getTopBooks } from './category';
 import { fetchCategory } from './books-api';
 
 const bookCategories = document.querySelector('.book-categories-js');
+const permanent = document.querySelector('.permanent-item-js');
 
 fetchCategory()
-  .then(response => renderCategoryList(response.data))
+  .then(response => {
+    permanent.hidden = false;
+    return renderCategoryList(response.data);
+  })
   .catch(error => console.log(error));
 
 function renderCategoryList(arr) {
