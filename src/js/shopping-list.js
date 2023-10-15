@@ -7,12 +7,28 @@ import emptyMob1x from '../img/shoping-list/empty-mobile@1x.png';
 import emptyMob2x from '../img/shoping-list/empty-mobile@2x.png';
 import emptyTab1x from '../img/shoping-list/empty-tablet@1x.png';
 import emptyTab2x from '../img/shoping-list/empty-tablet@2x.png';
+
 import Pagination from 'tui-pagination'; 
 
-const STORAGE_KEY_SHOPPING_LIST = 'shoppingList-localSorage';
+
+// функцію видалити------------------------------------------
+const BASE_URL = 'https://books-backend.p.goit.global/books/';
+async function fetchBookTop() {
+    const resp = await fetch(`${BASE_URL}top-books`);
+    const booksArr = await resp.json();
+    return booksArr;
+}
+fetchBookTop().then(data => {
+// console.log(data);
+ localStorage.setItem(STORAGE_KEY_SHOPPING_LIST, JSON.stringify(data.flatMap(el => el.books)));
+});
+// -----------------------------------------------------------
+
+const STORAGE_KEY_SHOPPING_LIST = 'shoppingList-localSorage'; //ключ взяти з модалки
+
 const paginationContainer = document.getElementById('pagination');
 const divEl = document.querySelector('.shopping-list-js');
-const cartlistEl = document.querySelector('.js-shopping-book-delete')
+const cartlistEl = document.querySelector('.js-shopping-book-delete');
 
 let page;
 let currentPage = 1;
@@ -25,21 +41,7 @@ let resizeTimeout;
 window.addEventListener('resize', changePagOptionsByScreenWidth);
 document.addEventListener('DOMContentLoaded', firstPageLoaded);
 
-const BASE_URL = 'https://books-backend.p.goit.global/books/';
-async function fetchBookTop() {
-    const resp = await fetch(`${BASE_URL}top-books`);
-    const booksArr = await resp.json();
-    return booksArr;
-}
-
-fetchBookTop().then(data => {
-// console.log(data);
- localStorage.setItem(STORAGE_KEY_SHOPPING_LIST, JSON.stringify(data.flatMap(el => el.books)));
-});
-
 const shopListLocStor = JSON.parse(localStorage.getItem(STORAGE_KEY_SHOPPING_LIST)) || [];
-console.log(shopListLocStor.slice(0, 6));
-
 
 createShoppingListPage();
 
@@ -54,14 +56,14 @@ function createShoppingListPage() {
   }
 }
 
-// функція створення карток в Shopping List
+
+// --------функція створення карток в Shopping List-------------------
 
 function renderMarkupOnShoppingList(arr, page) {
 
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const itemsOnPage = arr.slice(startIndex, endIndex);
-  
   const markup = itemsOnPage.map(
         ({
           _id,
@@ -76,7 +78,7 @@ function renderMarkupOnShoppingList(arr, page) {
            `
       <li class="shopping-list-card js-shopping-list-card" data-book-id="${_id}>
         <div class="">
-          <img class="shopping-card-img" src="${book_image}" alt="${title}" />
+          <img loading="lazy" class="shopping-card-img" src="${book_image}" alt="${title}" />
         </div>
         </div class="">
         <button type="button" aria-label="delete" class="shopping-book-delete js-shopping-book-delete">
@@ -85,39 +87,39 @@ function renderMarkupOnShoppingList(arr, page) {
           </svg>
         </button>
           <div class="shopping-message">
-            <h2 class="shopping-card-title">${title}</h2>
-            <p class="shopping-card-category">${list_name}</p>   
-            <p class="shopping-card-description">${description}</p>
+            <h2 class="shopping-card-title">${title.trim()}</h2>
+            <p class="shopping-card-category">${list_name.trim()}</p>   
+            <p class="shopping-card-description">${description.trim()}</p>
           <div class="shopping-card-footer">
-            <p class="shopping-card-author">${author}</p> 
+            <p class="shopping-card-author">${author.trim()}</p> 
             <ul class="shopping-card-shoplist">
                 <li class="">
-                  <a href="${amazon_product_url}" rel="noopener noreferrer nofollow">
+                  <a target="_blank" href="${amazon_product_url}" rel="noopener noreferrer nofollow">
                 <img class="shopping-link-amazon" srcset="
                   ${amazonImg1x},
-                  ${amazonImg2x}
-                  " alt="Amazon"/>
+                  ${amazonImg2x}" 
+                  src="${amazonImg1x}" alt="Amazon"/>
                 </a>
               </li>
               <li class="">
-                <a href="${apple.url}" rel="noopener noreferrer nofollow">
-                  <img class="shopping-link-apple" srcset="
+                <a target="_blank" href="${apple.url}" rel="noopener noreferrer nofollow">
+                  <img loading="lazy" class="shopping-link-apple" srcset=" 
                   ${appleImg1x},
-                  ${appleImg2x}
-                   " alt="Apple" />
+                  ${appleImg2x}" 
+                  src="${appleImg1x}" alt="Apple" />
                 </a>
               </li>
-           </ul>
-               
+           </ul>             
           </div>
       </li>
               `  
     ).join('');
+    
     divEl.innerHTML = markup;
 }
 
 
-// функція створення пустого кошика в Shopping List
+//---------------- функція створення порожнього кошика в Shopping List------------------
 
 function renderMarkupEmptyShopList() {
   const markup = `
@@ -130,11 +132,11 @@ function renderMarkupEmptyShopList() {
         "
   media="(min-width: 768px)"
         />
-   <img class="hopping-img-empty"
+   <img class="hopping-img-empty" loading="lazy"
     srcset="
       ${emptyMob1x} 1x,
       ${emptyMob2x} 2x
-            "
+        "
     src="${emptyMob1x}" alt="Empty Shopping list"
   "></sourse>
   </picture>
@@ -143,9 +145,10 @@ function renderMarkupEmptyShopList() {
   divEl.innerHTML = markup;
 }
 
-// paginations
+//---------------- paginations----------------------------------
 
 function initPagination(totalItems) {
+
   const pagination = new Pagination(paginationContainer, {
     totalItems: totalItems,
     itemsPerPage: itemsPerPage,
@@ -159,32 +162,32 @@ function initPagination(totalItems) {
     const shopListLocStor = JSON.parse(localStorage.getItem(STORAGE_KEY_SHOPPING_LIST));
     
     renderMarkupOnShoppingList(shopListLocStor, currentPage)
-  
     return currentPage;
   });
 }
 
 
-// Bидалення картки 
+// --------------------Bидалення картки ------------------------
+
 function deleteCard(evt) {
+
   if (evt.target.classList.contains('js-shopping-book-delete')) {
-    const card = evt.target.closest('js-shopping-list-card');
+    const card = evt.target.closest('.js-shopping-list-card');
     const bookId = card.dataset.bookId;
-
     const shopListLocStor = JSON.parse(localStorage.getItem(STORAGE_KEY_SHOPPING_LIST));
-
     const newShopListLocStor = shopListLocStor.filter(object => object.id !== bookId);
-     
+
     localStorage.setItem(STORAGE_KEY_SHOPPING_LIST, JSON.stringify(newShopListLocStor));
+
     if (!newShopListLocStor.length) {
       card.remove();
-      renderMarkupEmptyShopList;
+      renderMarkupEmptyShopList();
     }
 
     const countPages = Math.ceil(newShopListLocStor.length / itemsPerPage);
+
     if (countPages >= currentPage) {
       card.remove();
-
       createShoppingListPage();
     } else {
       page = countPages;
@@ -195,15 +198,16 @@ function deleteCard(evt) {
   }
 }
 
-// Функція зміни кількості відображення карток в залежності від ширини екрану
+//-------- Функція зміни кількості відображення карток в залежності від ширини екрану-----------
 
 function changePagOptionsByScreenWidth() {
+
   const screenWidth = window.innerWidth;
+  
   if (screenWidth < 768) {
     visiblePages = 1;
     itemsPerPage = 4;
     clearTimeout(resizeTimeout);
-
     resizeTimeout = setTimeout(function () {
       createShoppingListPage();
     }, 200);
@@ -211,7 +215,6 @@ function changePagOptionsByScreenWidth() {
     itemsPerPage = 3;
     visiblePages = 3;
     clearTimeout(resizeTimeout);
-
     resizeTimeout = setTimeout(function () {
       createShoppingListPage();
     }, 200);
@@ -219,7 +222,9 @@ function changePagOptionsByScreenWidth() {
 }
 
 // Функція зміни кількості відображення карток на сторінці в залежності від ширини екрану при першої загрузці сторінки
+
 function firstPageLoaded() {
+
   const screenWidth = window.innerWidth;
 
   if (screenWidth < 768) {
