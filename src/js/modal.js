@@ -92,11 +92,11 @@ function onEscPressed(evt) {
   }
 }
 
-async function getBookOnId(id) {
+async function getBookOnId(bookId) {
   const url = 'https://books-backend.p.goit.global/books/';
   try {
   
-    const getData = await axios.get(`${url}${id}`);
+    const getData = await axios.get(`${url}${bookId}`);
     return getData.data;
   } catch (error) {
     console.log(error);
