@@ -8,9 +8,9 @@ const refs = {
 };
 getTopBooks();
 
-refs.categoriesContainer.addEventListener('click', onBooksCategotyClick);
+refs.categoriesContainer.addEventListener('click', onBooksCategoryClick);
 
-function onBooksCategotyClick(evt) {
+function onBooksCategoryClick(evt) {
   if (evt.target.nodeName !== 'BUTTON') {
     return;
   }
