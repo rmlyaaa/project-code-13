@@ -71,7 +71,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1439px) {
+@media screen and (min-width: 768px) and (max-width: 1139px) {
   .wrapper {
     max-width: 768px;
     padding: 40px 32px 100px 32px;
@@ -96,7 +96,7 @@
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1140px) {
   .wrapper {
     display: flex;
     justify-content: space-between;
