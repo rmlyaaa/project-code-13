@@ -38,6 +38,12 @@
   background: var(--scroll-bar-color);
 }
 
+.active-category {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--dec-color-blue);
+}
+
 @media screen and (min-width: 428px) {
   .wrapper {
     max-width: 375px;
@@ -112,11 +118,5 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  .active-category {
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--dec-color-blue);
   }
 }
