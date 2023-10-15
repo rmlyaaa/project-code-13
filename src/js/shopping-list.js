@@ -10,6 +10,22 @@ import emptyTab2x from '../img/shoping-list/empty-tablet@2x.png';
 
 import Pagination from 'tui-pagination';
 
+// функцію видалити------------------------------------------
+// const BASE_URL = 'https://books-backend.p.goit.global/books/';
+// async function fetchBookTop() {
+//   const resp = await fetch(`${BASE_URL}top-books`);
+//   const booksArr = await resp.json();
+//   return booksArr;
+// }
+// fetchBookTop().then(data => {
+//   // console.log(data);
+//   localStorage.setItem(
+//     STORAGE_KEY_SHOPPING_LIST,
+//     JSON.stringify(data.flatMap(el => el.books))
+//   );
+// });
+// -----------------------------------------------------------
+
 const STORAGE_KEY_SHOPPING_LIST = 'ListOfBooks'; //ключ взяти з модалки
 
 const paginationContainer = document.getElementById('pagination');
