@@ -1,7 +1,15 @@
 .container {
-  max-width: 375px;
-  padding: 40px 20px;
+  width: 100%;
+  max-height: 64px;
+  padding: 18px 20px;
   margin: auto;
+  overflow: hidden;
+}
+
+.shoping-list-container {
+  max-width: 375px;
+  width: 100%;
+  padding: 40px 20px;
   overflow: hidden;
 }
 
@@ -84,6 +92,9 @@
   font-weight: 400;
   line-height: 1.17;
   display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .shopping-card-description {
@@ -122,6 +133,9 @@
   font-style: italic;
   font-weight: 400;
   line-height: 1.17;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .shopping-card-shoplist {
@@ -183,7 +197,7 @@
   justify-content: center;
   align-items: center;
   gap: 14px;
-  margin-top: 120px;
+  margin-top: 80px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -213,9 +227,17 @@
 }
 
 @media screen and (min-width: 768px) {
-  .container {
+  .shopping-list-container {
     max-width: 768px;
     padding: 40px 32px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .shoping-list-container {
+    max-width: 768px;
+    max-height: 72px;
+    padding: 14px 32px;
   }
 
   .shopping-list-title {
@@ -228,6 +250,20 @@
     overflow: visible;
   }
 
+  .shopping-card-title {
+    overflow: visible;
+    max-width: 508px;
+  }
+
+  .shopping-card-category {
+    max-width: 508px;
+  }
+
+  .shopping-card-description {
+    max-width: 508px;
+    overflow: visible;
+  }
+
   .shopping-card-description {
     max-width: 508px;
     overflow: visible;
@@ -236,6 +272,18 @@
   .shopping-item {
     gap: 24px;
     padding: 24px;
+  }
+
+  .shopping-item {
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .shopping-card-img {
+    min-width: 116px;
+    height: 165px;
+    object-fit: cover;
+    border-radius: 8px;
   }
 
   .shopping-card-img {
@@ -252,6 +300,18 @@
     right: 24px;
   }
 
+  .shopping-book-delete {
+    width: 34px;
+    height: 34px;
+    top: 24px;
+    right: 24px;
+  }
+
+  .shopping-icon-delete {
+    width: 18px;
+    height: 18px;
+  }
+
   .shopping-icon-delete {
     width: 18px;
     height: 18px;
@@ -260,6 +320,16 @@
   .shopping-link-amazon {
     width: 48px;
     height: 15px;
+  }
+
+  .shopping-link-amazon {
+    width: 48px;
+    height: 15px;
+  }
+
+  .shopping-link-apple {
+    width: 26px;
+    height: 27px;
   }
 
   .shopping-link-apple {
@@ -273,6 +343,20 @@
     gap: 20px;
   }
 
+  .shopping-list-empty {
+    max-width: 349px;
+    margin-top: 100px;
+    gap: 20px;
+  }
+
+  .shopping-text-empty {
+    max-width: 349px;
+    letter-spacing: -0.36px;
+    font-size: 18px;
+    line-height: 1.33;
+    height: 48px;
+  }
+
   .shopping-text-empty {
     max-width: 349px;
     letter-spacing: -0.36px;
@@ -284,11 +368,31 @@
   .page-pagination {
     margin-top: 40px;
   }
-}
 
-@media screen and (min-width: 1440px) {
-  .container {
-    max-width: 1440px;
-    padding: 40px 24px 40px 40px;
+
+  @media screen and (min-width: 1440px) {
+    .shopping-list-container {
+      max-width: 996px;
+      padding: 0;
+      padding-top: 40px;
+    }
+
+    .shopping-card-title {
+      max-width: 778px;
+    }
+
+    .shopping-card-category {
+      max-width: 778px;
+    }
+
+    .shopping-card-description {
+      max-width: 778px;
+    }
+
+    .container {
+      max-width: 1440px;
+      max-height: 72px;
+      padding: 14px 24px;
+    }
   }
 }

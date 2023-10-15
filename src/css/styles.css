@@ -7,7 +7,8 @@
 @import url('./book-list.css');
 @import url('./loader.css');
 @import url('./support-ukraine');
-@import url('./shopping-list.css');
+@import url("./shopping-list.css");
+@import url("./psgination.css");
 /* Modal */
 @import url('./modal.css');
 

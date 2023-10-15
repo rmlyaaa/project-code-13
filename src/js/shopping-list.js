@@ -8,29 +8,28 @@ import emptyMob2x from '../img/shoping-list/empty-mobile@2x.png';
 import emptyTab1x from '../img/shoping-list/empty-tablet@1x.png';
 import emptyTab2x from '../img/shoping-list/empty-tablet@2x.png';
 
-//import Pagination from 'tui-pagination';
+import Pagination from 'tui-pagination';
 
 // функцію видалити------------------------------------------
-const BASE_URL = 'https://books-backend.p.goit.global/books/';
-async function fetchBookTop() {
-  const resp = await fetch(`${BASE_URL}top-books`);
-  const booksArr = await resp.json();
-  return booksArr;
-}
-fetchBookTop().then(data => {
-  // console.log(data);
-  localStorage.setItem(
-    STORAGE_KEY_SHOPPING_LIST,
-    JSON.stringify(data.flatMap(el => el.books))
-  );
-});
+// const BASE_URL = 'https://books-backend.p.goit.global/books/';
+// async function fetchBookTop() {
+//   const resp = await fetch(`${BASE_URL}top-books`);
+//   const booksArr = await resp.json();
+//   return booksArr;
+// }
+// fetchBookTop().then(data => {
+//   // console.log(data);
+//   localStorage.setItem(
+//     STORAGE_KEY_SHOPPING_LIST,
+//     JSON.stringify(data.flatMap(el => el.books))
+//   );
+// });
 // -----------------------------------------------------------
 
-const STORAGE_KEY_SHOPPING_LIST = 'shoppingList-localSorage'; //ключ взяти з модалки
+const STORAGE_KEY_SHOPPING_LIST = 'ListOfBooks'; //ключ взяти з модалки
 
 const paginationContainer = document.getElementById('pagination');
 const divEl = document.querySelector('.shopping-list-js');
-const cartlistEl = document.querySelector('.js-shopping-book-delete');
 
 let page;
 let currentPage = 1;
@@ -38,23 +37,23 @@ let itemsPerPage;
 let visiblePages;
 let resizeTimeout;
 
-// cartlistEl.addEventListener('click', deleteCard);
 window.addEventListener('resize', changePagOptionsByScreenWidth);
 document.addEventListener('DOMContentLoaded', firstPageLoaded);
-
-const shopListLocStor =
-  JSON.parse(localStorage.getItem(STORAGE_KEY_SHOPPING_LIST)) || [];
+divEl.addEventListener('click', deleteCard);
 
 createShoppingListPage();
 
+//
+
 function createShoppingListPage() {
+  const shopListLocStor =
+    JSON.parse(localStorage.getItem(STORAGE_KEY_SHOPPING_LIST)) || [];
   if (shopListLocStor.length === 0) {
     renderMarkupEmptyShopList();
   } else {
     const totalItems = shopListLocStor.length;
-    console.log(totalItems);
     initPagination(totalItems);
-    renderMarkupOnShoppingList();
+    renderMarkupOnShoppingList(shopListLocStor, currentPage);
   }
 }
 
@@ -77,7 +76,7 @@ function renderMarkupOnShoppingList(arr, page) {
         buy_links: [, apple],
       }) =>
         `
-      <li class="shopping-list-card js-shopping-list-card" data-book-id="${_id}>
+      <li class="shopping-list-card js-shopping-list-card" data-book-id="${_id}">
         <div class="">
           <img loading="lazy" class="shopping-card-img" src="${book_image}" alt="${title}" />
         </div>
@@ -180,30 +179,13 @@ function deleteCard(evt) {
       localStorage.getItem(STORAGE_KEY_SHOPPING_LIST)
     );
     const newShopListLocStor = shopListLocStor.filter(
-      object => object.id !== bookId
+      object => object._id !== bookId
     );
-
     localStorage.setItem(
       STORAGE_KEY_SHOPPING_LIST,
       JSON.stringify(newShopListLocStor)
     );
-
-    if (!newShopListLocStor.length) {
-      card.remove();
-      renderMarkupEmptyShopList();
-    }
-
-    const countPages = Math.ceil(newShopListLocStor.length / itemsPerPage);
-
-    if (countPages >= currentPage) {
-      card.remove();
-      createShoppingListPage();
-    } else {
-      page = countPages;
-      currentPage = countPages;
-      card.remove();
-      createShoppingListPage();
-    }
+    createShoppingListPage();
   }
 }
 
