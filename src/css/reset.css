@@ -33,3 +33,14 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+
+.link {
+  text-decoration: none;
+}
+
+/* Lists reset */
+
+.list {
+  list-style: none;
+}
