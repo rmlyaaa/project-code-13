@@ -4,6 +4,7 @@
 @import url('./modalAuthorization.css');
 @import url('./btn.css');
 @import url('./books.css');
+@import url('./book-list.css');
 @import url('./loader.css');
 @import url('./support-ukraine');
 /* Modal */
@@ -28,6 +29,7 @@
   --accent-color: #404bbf;
   --accent-text-color: #ffffff;
   --border-color: #404bbf;
+  --scroll-bar-color: #e0e0e0;
   --animation-speed: 500ms ease-in-out;
 }
 
