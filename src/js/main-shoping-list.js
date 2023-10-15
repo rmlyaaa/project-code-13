@@ -1,3 +1,5 @@
+import './theme-switch';
+
 import './authorization/open-authorization';
 document.querySelectorAll('.nav-link').forEach(link => {
   if (
