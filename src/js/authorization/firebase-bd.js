@@ -1,6 +1,6 @@
 import { loadDBList, saveDBList } from './firebase-api';
 
-const BOOK_LIST_KEY = 'BOOK_LIST';
+// const BOOK_LIST_KEY = 'ListOfBooks';
 
 export function loadBDList() {
   loadDBList().then(snapshot => {

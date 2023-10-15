@@ -369,12 +369,13 @@
     margin-top: 40px;
   }
 
-
   @media screen and (min-width: 1440px) {
     .shopping-list-container {
       max-width: 996px;
+      width: 100%;
       padding: 0;
       padding-top: 40px;
+      margin-left: 40px;
     }
 
     .shopping-card-title {
@@ -395,3 +396,4 @@
       padding: 14px 24px;
     }
   }
+}
