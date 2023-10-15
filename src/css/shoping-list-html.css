@@ -1,0 +1,21 @@
+.support-ukraine-section {
+  display: none;
+}
+.shopping-main-wrapper {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 1440px) {
+  .support-ukraine-section {
+    width: 356px;
+    display: block;
+  }
+  .support-ukraine-container {
+    max-width: 356px;
+    margin-top: 40px;
+  }
+}

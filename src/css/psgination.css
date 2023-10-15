@@ -1,10 +1,21 @@
-
 .tui-pagination {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tui-page-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 38px;
+  width: 38px;
+  border: 1px solid #111111;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 18px;
+  color: inherit;
 
   .tui-page-btn {
     display: flex;
@@ -23,7 +34,7 @@
       width: 44px;
     }
   }
-  
+
   .tui-page-btn.tui-first,
   .tui-page-btn.tui-prev {
     color: #ffffff;
@@ -32,6 +43,23 @@
     border-color: #111111;
   }
 
+  @media screen and (min-width: 768px) {
+    height: 44px;
+    width: 44px;
+  }
+}
+
+.tui-page-btn.tui-first,
+.tui-page-btn.tui-prev {
+  color: #ffffff;
+  cursor: pointer;
+  background: #111111;
+  border-color: #111111;
+}
+
+.tui-page-btn.tui-prev {
+  margin-right: 6px;
+
   .tui-page-btn.tui-prev {
     margin-right: 6px;
 
@@ -39,227 +67,227 @@
       margin-right: 16px;
     }
   }
+}
 
-  .tui-page-btn.tui-first:hover,
-  .tui-page-btn.tui-prev:hover {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
+.tui-page-btn.tui-first:hover,
+.tui-page-btn.tui-prev:hover {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
 
-  .tui-page-btn.tui-first:active,
-  .tui-page-btn.tui-prev:active {
-    color:  #eac645;
-  }
+.tui-page-btn.tui-first:active,
+.tui-page-btn.tui-prev:active {
+  color: #eac645;
+}
 
-  .tui-page-btn.tui-next,
-  .tui-page-btn.tui-last {
-    color: #111111;
-    cursor: pointer;
-    background:  #eac645;
-    border-color: #111111;
-  }
+.tui-page-btn.tui-next,
+.tui-page-btn.tui-last {
+  color: #111111;
+  cursor: pointer;
+  background: #eac645;
+  border-color: #111111;
+}
 
-  .tui-page-btn.tui-next {
-    margin-left: 6px;
+.tui-page-btn.tui-next {
+  margin-left: 6px;
 
-    @media screen and (min-width: 768px) {
-      margin-left: 16px;
-    }
+  @media screen and (min-width: 768px) {
+    margin-left: 16px;
   }
-  
-  .tui-page-btn.tui-next:hover,
-  .tui-page-btn.tui-last:hover {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
+}
 
-  .tui-page-btn.tui-next:active,
-  .tui-page-btn.tui-last:active {
-    color: #ffffff;
-  }
-  
-  .tui-page-btn.tui-is-disabled.tui-first,
-  .tui-page-btn.tui-is-disabled.tui-prev {
-    color: $paragraph-colour;
-    cursor: pointer;
-    background: #111111;
-    border-color: #111111;
-    filter: none;
-  }
+.tui-page-btn.tui-next:hover,
+.tui-page-btn.tui-last:hover {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
 
-  .tui-page-btn.tui-is-disabled.tui-next,
-  .tui-page-btn.tui-is-disabled.tui-last {
-    color: $paragraph-colour;
-    cursor: pointer;
-    background:  #eac645;
-    border-color: #111111;
-    filter: none;
-  }
+.tui-page-btn.tui-next:active,
+.tui-page-btn.tui-last:active {
+  color: #ffffff;
+}
 
-  .tui-pagination .tui-is-selected,
-  .tui-pagination strong {
-    color: #ffffff;
-    cursor: pointer;
-    background: #111111;
-    border-color: #111111;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
+.tui-page-btn.tui-is-disabled.tui-first,
+.tui-page-btn.tui-is-disabled.tui-prev {
+  color: $paragraph-colour;
+  cursor: pointer;
+  background: #111111;
+  border-color: #111111;
+  filter: none;
+}
 
-  .tui-pagination .tui-ico-first,
-  .tui-pagination .tui-ico-prev,
-  .tui-pagination .tui-ico-next,
-  .tui-pagination .tui-ico-last {
-    font-size: 0;
-  }
+.tui-page-btn.tui-is-disabled.tui-next,
+.tui-page-btn.tui-is-disabled.tui-last {
+  color: $paragraph-colour;
+  cursor: pointer;
+  background: #eac645;
+  border-color: #111111;
+  filter: none;
+}
 
-  .tui-ico-prev::before {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin-left: 5px;
-    border: 2px solid;
+.tui-pagination .tui-is-selected,
+.tui-pagination strong {
+  color: #ffffff;
+  cursor: pointer;
+  background: #111111;
+  border-color: #111111;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.tui-pagination .tui-ico-first,
+.tui-pagination .tui-ico-prev,
+.tui-pagination .tui-ico-next,
+.tui-pagination .tui-ico-last {
+  font-size: 0;
+}
+
+.tui-ico-prev::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 5px;
+  border: 2px solid;
+  border-left: none;
+  border-top: none;
+  border-radius: 2px;
+  transform: rotate(0.37turn);
+
+  @media screen and (min-width: 768px) {
+    height: 16px;
+    width: 16px;
+    border: 3px solid;
     border-left: none;
     border-top: none;
-    border-radius:2px;
-    transform: rotate(0.37turn);
-
-    @media screen and (min-width: 768px) {
-      height: 16px;
-      width: 16px;
-      border: 3px solid;
-      border-left: none;
-      border-top: none;
-      border-radius: 3px;
-    }
+    border-radius: 3px;
   }
+}
 
-  .tui-ico-first::after {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin-right: 5px;
-    margin-left: 5px;
-    border: 2px solid;
+.tui-ico-first::after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  margin-left: 5px;
+  border: 2px solid;
+  border-left: none;
+  border-top: none;
+  border-radius: 2px;
+  transform: rotate(0.37turn);
+
+  @media screen and (min-width: 768px) {
+    height: 16px;
+    width: 16px;
+    border: 3px solid;
     border-left: none;
     border-top: none;
-    border-radius: 2px;
-    transform: rotate(0.37turn);
-
-    @media screen and (min-width: 768px) {
-      height: 16px;
-      width: 16px;
-      border: 3px solid;
-      border-left: none;
-      border-top: none;
-      border-radius: 3px;
-    }
+    border-radius: 3px;
   }
+}
 
-  .tui-ico-first::before {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-  
-    border: 2px solid;
+.tui-ico-first::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+
+  border: 2px solid;
+  border-left: none;
+  border-top: none;
+  border-radius: 2px;
+  transform: translateX(10px) rotate(0.37turn);
+
+  @media screen and (min-width: 768px) {
+    height: 16px;
+    width: 16px;
+    border: 3px solid;
     border-left: none;
     border-top: none;
-    border-radius: 2px;
-    transform: translateX(10px) rotate(0.37turn);
-
-    @media screen and (min-width: 768px) {
-      height: 16px;
-      width: 16px;
-      border: 3px solid;
-      border-left: none;
-      border-top: none;
-      border-radius: 3px;
-    }
+    border-radius: 3px;
   }
+}
 
-  .tui-ico-next::before {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin-right: 5px;
-    border: 2px solid;
+.tui-ico-next::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  border: 2px solid;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 2px;
+  transform: rotate(0.37turn);
+
+  @media screen and (min-width: 768px) {
+    height: 16px;
+    width: 16px;
+    border: 3px solid;
     border-right: none;
     border-bottom: none;
-    border-radius: 2px;
-    transform: rotate(0.37turn);
-
-    @media screen and (min-width: 768px) {
-      height: 16px;
-      width: 16px;
-      border: 3px solid;
-      border-right: none;
-      border-bottom: none;
-      border-radius: 3px;
-    }
+    border-radius: 3px;
   }
+}
 
-  .tui-ico-last::before {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin-right: 5px;
-    margin-left: 5px;
-    border: 2px solid;
+.tui-ico-last::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  margin-left: 5px;
+  border: 2px solid;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 2px;
+  transform: rotate(0.37turn);
+
+  @media screen and (min-width: 768px) {
+    height: 16px;
+    width: 16px;
+    border: 3px solid;
     border-right: none;
     border-bottom: none;
-    border-radius: 2px;
-    transform: rotate(0.37turn);
-
-    @media screen and (min-width: 768px) {
-      height: 16px;
-      width: 16px;
-      border: 3px solid;
-      border-right: none;
-      border-bottom: none;
-      border-radius: 3px;
-    }
+    border-radius: 3px;
   }
+}
 
-  .tui-ico-last::after {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border: 2px solid;
+.tui-ico-last::after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 2px;
+  transform: translateX(-10px) rotate(0.37turn);
+
+  @media screen and (min-width: 768px) {
+    height: 16px;
+    width: 16px;
+    border: 3px solid;
     border-right: none;
     border-bottom: none;
-    border-radius: 2px;
-    transform: translateX(-10px) rotate(0.37turn);
-    
-    @media screen and (min-width: 768px) {
-      height:16px;
-      width: 16px;
-      border: 3px solid;
-      border-right: none;
-      border-bottom: none;
-      border-radius: 3px;
-    }
+    border-radius: 3px;
   }
+}
 
-  .tui-page-btn.tui-prev-is-ellip.tui-first-child{
-    display: none;
-  }
-  
-  .tui-page-btn.tui-next-is-ellip.tui-last-child:hover,
-  .tui-page-btn.tui-prev-is-ellip.tui-first-child:hover {
-    background-color: #ffffff;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
+.tui-page-btn.tui-prev-is-ellip.tui-first-child {
+  display: none;
+}
 
-  .tui-page-btn.tui-next-is-ellip.tui-last-child:active {
-    background-color:  #eac645;
-    color: #ffffff;
-  }
+.tui-page-btn.tui-next-is-ellip.tui-last-child:hover,
+.tui-page-btn.tui-prev-is-ellip.tui-first-child:hover {
+  background-color: #ffffff;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
 
-  .tui-page-btn.tui-prev-is-ellip.tui-first-child:active {
-    background-color: #111111;
-    color: #ffffff;
-  }
-  
+.tui-page-btn.tui-next-is-ellip.tui-last-child:active {
+  background-color: #eac645;
+  color: #ffffff;
+}
+
+.tui-page-btn.tui-prev-is-ellip.tui-first-child:active {
+  background-color: #111111;
+  color: #ffffff;
+}
