@@ -1,16 +1,38 @@
 import { topBooks, bookByCategory } from './books-api.js';
+import { showError } from './messages.js';
+import { toggleLoader } from './loader.js';
 
 const refs = {
   categoriesContainer: document.querySelector('.js-books-container'),
   booksMenu: document.querySelector('.booksMenu'),
 };
-
 getTopBooks();
-//getBooksByCategory('Childrens Middle Grade Hardcover');
+
+refs.categoriesContainer.addEventListener('click', onBooksCategotyClick);
+
+function onBooksCategotyClick(evt) {
+  if (evt.target.nodeName !== 'BUTTON') {
+    return;
+  }
+
+  const currentCategory = evt.target.dataset.category;
+  if (!currentCategory) {
+    showError('There is no category to show');
+    return;
+  }
+
+  getBooksByCategory(currentCategory);
+}
 
 async function getTopBooks() {
   try {
-    const data = await topBooks();
+    const data = await topBooks()
+      .then(response => {
+        toggleLoader();
+        return response;
+      })
+      .catch(() => toggleLoader())
+      .finally(toggleLoader());
     if (!data.length) {
       showError('Sorry, there are no books', 'center-center');
       return;
@@ -27,7 +49,13 @@ async function getTopBooks() {
 
 async function getBooksByCategory(categoryName) {
   try {
-    const data = await bookByCategory(categoryName);
+    const data = await bookByCategory(categoryName)
+      .then(response => {
+        toggleLoader();
+        return response;
+      })
+      .catch(() => toggleLoader())
+      .finally(toggleLoader());
     if (!data.length) {
       showError('Sorry, there are no books', 'center-center');
       return;
@@ -57,6 +85,9 @@ function createTopBooksMarkup(fullCategoryName, arrCategories) {
               <a href="" class="book-link link">
                 <div class="book-thumb-img">
                   <img class="book-img" src="${book_image}" alt="${title}" loading="lazy"/>
+                  <div class="overlay">
+                    <p>Quick view</p>
+                  </div>
                 </div>
                 <div class="book-wrapper">
                   <h3 class="book-name">${title}</h3>
@@ -88,6 +119,9 @@ function createBooksByCategoryMarkup(fullCategoryName, arrCategories) {
               <a href="" class="book-link link">
                 <div class="book-thumb-img">
                   <img class="book-img" src="${book_image}" alt="${title}" loading="lazy"/>
+                  <div class="overlay">
+                    <p>Quick view</p>
+                  </div>
                 </div>
                 <div class="book-wrapper">
                   <h3 class="book-name">${title}</h3>

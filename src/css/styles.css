@@ -5,6 +5,10 @@
 @import url('./btn.css');
 @import url('./books.css');
 @import url('./book-list.css');
+@import url('./loader.css');
+@import url('./support-ukraine');
+/* Modal */
+@import url('./modal.css');
 
 :root {
   font-synthesis: none;
@@ -21,6 +25,7 @@
   --dec-color-blue: #4f2ee8;
 
   --text-color: #111111;
+  --sec-text-color: #b4afaf;
   --accent-color: #404bbf;
   --accent-text-color: #ffffff;
   --border-color: #404bbf;
@@ -29,6 +34,7 @@
 }
 
 body {
+  position: relative;
   padding-top: 0;
   margin: 0;
   font-family: DM Sans;
