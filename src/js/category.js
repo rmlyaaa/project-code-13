@@ -21,6 +21,16 @@ function onBooksCategotyClick(evt) {
     return;
   }
 
+  const listArr = document.querySelectorAll('.list-item');
+
+  for (let element of listArr) {
+    if (element.textContent === currentCategory) {
+      element.classList.add('active-category');
+    } else {
+      element.classList.remove('active-category');
+    }
+  }
+
   getBooksByCategory(currentCategory);
 }
 

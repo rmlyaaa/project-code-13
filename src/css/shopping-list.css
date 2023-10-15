@@ -15,7 +15,7 @@
 }
 
 .shopping-list-title-span {
-  color: #4F2EE8;
+  color: #4f2ee8;
 }
 
 .shopping-list {
@@ -27,8 +27,8 @@
 
 .shopping-item {
   border-radius: 16px;
-  border: 2px solid rgba(79, 46, 232, 0.40);
-  background: #FFF;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  background: #fff;
   gap: 14px;
   padding: 14px;
   display: flex;
@@ -61,7 +61,7 @@
 .shopping-card-title {
   max-width: 144px;
   width: 100%;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
   text-transform: uppercase;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -75,7 +75,7 @@
 
 .shopping-card-category {
   max-width: 156px;
-  letter-spacing: .03em;
+  letter-spacing: 0.03em;
   white-space: nowrap;
   text-overflow: ellipsis;
   color: #b4afaf;
@@ -86,12 +86,11 @@
   display: block;
 }
 
-
 .shopping-card-description {
   width: 100%;
   max-width: 193px;
   max-height: 68px;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
   -webkit-line-clamp: 3;
   max-height: 3.9em;
   text-overflow: ellipsis;
@@ -113,10 +112,9 @@
   display: flex;
 }
 
-
 .shopping-card-author {
   max-width: 95px;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
   white-space: nowrap;
   text-overflow: ellipsis;
   color: #b4afaf;
@@ -163,7 +161,7 @@
   justify-content: center;
   align-items: center;
   padding: 6px;
-  transition: background-color .5s cubic-bezier(.4, 0, .2, 1);
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   position: absolute;
   top: 14px;
@@ -213,7 +211,6 @@
 .page-pagination {
   margin-top: 20px;
 }
-
 
 @media screen and (min-width: 768px) {
   .container {
