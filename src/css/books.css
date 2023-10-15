@@ -1,7 +1,8 @@
 .books-categories-sections {
-  max-width: 996px;
-  margin-top: 40px;
-  margin-left: 40px;
+  max-width: calc(100% - 396px);
+  /* max-width: 996px; */
+  /* margin-top: 40px;
+  margin-left: 40px; */
 }
 
 @media screen and (max-width: 377px) {
@@ -56,6 +57,7 @@
 
 .book-list {
   display: flex;
+  justify-content: space-between;
   /* justify-content: center; */
   column-gap: 24px;
   margin-bottom: 8px;
