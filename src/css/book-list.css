@@ -63,6 +63,7 @@
   .main-container {
     padding-bottom: 40px;
   }
+
   /* .main-container {
     max-width: 375px;
   } */
@@ -130,4 +131,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+}
+
+.support {
+  background-color: aqua;
 }

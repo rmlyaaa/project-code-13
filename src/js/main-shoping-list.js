@@ -1,4 +1,5 @@
 import './authorization/open-authorization';
+
 document.querySelectorAll('.nav-link').forEach(link => {
   if (
     window.location.pathname.endsWith(link.attributes.href.value) ||
