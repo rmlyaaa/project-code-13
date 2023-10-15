@@ -2,11 +2,6 @@ import axios from 'axios';
 
 const BASE_URL = 'https://books-backend.p.goit.global/books/';
 
-async function allBooksCategories() {
-  const resp = await axios.get(`${BASE_URL}category-list`);
-  return resp.data;
-}
-
 async function topBooks() {
   const resp = await axios.get(`${BASE_URL}top-books`);
   return resp.data;
@@ -26,4 +21,8 @@ async function currentBook(bookId) {
   return resp.data;
 }
 
-export { allBooksCategories, topBooks, bookByCategory, currentBook };
+async function fetchCategory() {
+  return await axios.get(`${BASE_URL}category-list`);
+}
+
+export { fetchCategory, topBooks, bookByCategory, currentBook };
