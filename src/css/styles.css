@@ -6,6 +6,9 @@
 @import url('./books.css');
 @import url('./loader.css');
 
+/* Modal */
+@import url('./modal.css');
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
