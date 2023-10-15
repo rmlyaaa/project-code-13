@@ -105,7 +105,7 @@
   margin-left: 4px;
 }
 
-.nav-link[aria-current="page"] {
+.nav-link[aria-current='page'] {
   background-color: var(--dec-color-yellow);
   padding: 7px 16px;
   border-radius: 36px;
@@ -132,5 +132,4 @@
   height: 45px;
   background-color: var(--dec-color-blue);
   border-radius: 36px;
-
 }
