@@ -1,4 +1,12 @@
 .container {
+  width: 100%;
+  max-height: 64px;
+  padding: 18px 20px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.shoping-list-container {
   max-width: 375px;
   padding: 40px 20px;
   margin: auto;
@@ -217,6 +225,14 @@
     max-width: 768px;
     padding: 40px 32px;
   }
+}
+
+@media screen and (min-width: 768px) {
+  .shoping-list-container {
+    max-width: 768px;
+    max-height: 72px;
+    padding: 14px 32px;
+  }
 
   .shopping-list-title {
     font-size: 48px;
@@ -287,9 +303,15 @@
   }
 }
 
-@media screen and (min-width: 1440px) {
-  .container {
+@media screen and (min-width: 1140px) {
+  .shoping-list-container {
     max-width: 1440px;
     padding: 40px 24px 40px 40px;
+  }
+
+  .container {
+    max-width: 1440px;
+    max-height: 72px;
+    padding: 14px 24px;
   }
 }
