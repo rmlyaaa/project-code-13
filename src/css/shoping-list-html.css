@@ -1,19 +1,28 @@
 .support-ukraine-section {
   display: none;
 }
+
 .shopping-main-wrapper {
-  max-width: 1440px;
+  max-width: 428px;
   width: 100%;
-  margin: 0 auto;
+  margin-top: 40px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 @media screen and (min-width: 1440px) {
+  .shopping-main-wrapper {
+    max-width: 1440px;
+    margin: auto;
+
+    gap: 40px;
+  }
+
   .support-ukraine-section {
     width: 356px;
     display: block;
   }
+
   .support-ukraine-container {
     max-width: 356px;
     margin-top: 40px;
