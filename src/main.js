@@ -1,4 +1,4 @@
- import './js/theme-switch';
+import './js/theme-switch';
  
 import './js/category';
 // import './js/book-list-render';
