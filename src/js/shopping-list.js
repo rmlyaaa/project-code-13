@@ -1,4 +1,4 @@
-import svgBasket from '../img/shoping-list/sprite.svg'
+import svgBasket from '../img/shoping-list/sprite.svg';
 import amazonImg1x from '../img/shoping-list/amazon-icon1x.png';
 import amazonImg2x from '../img/shoping-list/amazon-icon1x.png';
 import appleImg1x from '../img/shoping-list/applebook-icon1x.png';
@@ -8,19 +8,21 @@ import emptyMob2x from '../img/shoping-list/empty-mobile@2x.png';
 import emptyTab1x from '../img/shoping-list/empty-tablet@1x.png';
 import emptyTab2x from '../img/shoping-list/empty-tablet@2x.png';
 
-import Pagination from 'tui-pagination'; 
-
+//import Pagination from 'tui-pagination';
 
 // функцію видалити------------------------------------------
 const BASE_URL = 'https://books-backend.p.goit.global/books/';
 async function fetchBookTop() {
-    const resp = await fetch(`${BASE_URL}top-books`);
-    const booksArr = await resp.json();
-    return booksArr;
+  const resp = await fetch(`${BASE_URL}top-books`);
+  const booksArr = await resp.json();
+  return booksArr;
 }
 fetchBookTop().then(data => {
-// console.log(data);
- localStorage.setItem(STORAGE_KEY_SHOPPING_LIST, JSON.stringify(data.flatMap(el => el.books)));
+  // console.log(data);
+  localStorage.setItem(
+    STORAGE_KEY_SHOPPING_LIST,
+    JSON.stringify(data.flatMap(el => el.books))
+  );
 });
 // -----------------------------------------------------------
 
@@ -36,46 +38,45 @@ let itemsPerPage;
 let visiblePages;
 let resizeTimeout;
 
-
 // cartlistEl.addEventListener('click', deleteCard);
 window.addEventListener('resize', changePagOptionsByScreenWidth);
 document.addEventListener('DOMContentLoaded', firstPageLoaded);
 
-const shopListLocStor = JSON.parse(localStorage.getItem(STORAGE_KEY_SHOPPING_LIST)) || [];
+const shopListLocStor =
+  JSON.parse(localStorage.getItem(STORAGE_KEY_SHOPPING_LIST)) || [];
 
 createShoppingListPage();
 
 function createShoppingListPage() {
-  if(shopListLocStor.length === 0) {
+  if (shopListLocStor.length === 0) {
     renderMarkupEmptyShopList();
   } else {
     const totalItems = shopListLocStor.length;
     console.log(totalItems);
     initPagination(totalItems);
-    renderMarkupOnShoppingList()
+    renderMarkupOnShoppingList();
   }
 }
-
 
 // --------функція створення карток в Shopping List-------------------
 
 function renderMarkupOnShoppingList(arr, page) {
-
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const itemsOnPage = arr.slice(startIndex, endIndex);
-  const markup = itemsOnPage.map(
-        ({
-          _id,
-          title,
-          author,
-          description,
-          list_name,
-          book_image,
-          amazon_product_url,
-          buy_links: [,apple],
-        }) => 
-           `
+  const markup = itemsOnPage
+    .map(
+      ({
+        _id,
+        title,
+        author,
+        description,
+        list_name,
+        book_image,
+        amazon_product_url,
+        buy_links: [, apple],
+      }) =>
+        `
       <li class="shopping-list-card js-shopping-list-card" data-book-id="${_id}>
         <div class="">
           <img loading="lazy" class="shopping-card-img" src="${book_image}" alt="${title}" />
@@ -102,7 +103,9 @@ function renderMarkupOnShoppingList(arr, page) {
                 </a>
               </li>
               <li class="">
-                <a target="_blank" href="${apple.url}" rel="noopener noreferrer nofollow">
+                <a target="_blank" href="${
+                  apple.url
+                }" rel="noopener noreferrer nofollow">
                   <img loading="lazy" class="shopping-link-apple" srcset=" 
                   ${appleImg1x},
                   ${appleImg2x}" 
@@ -112,12 +115,12 @@ function renderMarkupOnShoppingList(arr, page) {
            </ul>             
           </div>
       </li>
-              `  
-    ).join('');
-    
-    divEl.innerHTML = markup;
-}
+              `
+    )
+    .join('');
 
+  divEl.innerHTML = markup;
+}
 
 //---------------- функція створення порожнього кошика в Shopping List------------------
 
@@ -140,7 +143,7 @@ function renderMarkupEmptyShopList() {
     src="${emptyMob1x}" alt="Empty Shopping list"
   "></sourse>
   </picture>
-  </div>`
+  </div>`;
 
   divEl.innerHTML = markup;
 }
@@ -148,7 +151,6 @@ function renderMarkupEmptyShopList() {
 //---------------- paginations----------------------------------
 
 function initPagination(totalItems) {
-
   const pagination = new Pagination(paginationContainer, {
     totalItems: totalItems,
     itemsPerPage: itemsPerPage,
@@ -156,28 +158,35 @@ function initPagination(totalItems) {
     centerAlign: true,
     page: currentPage,
   });
- 
+
   pagination.on('afterMove', eventData => {
     currentPage = eventData.page;
-    const shopListLocStor = JSON.parse(localStorage.getItem(STORAGE_KEY_SHOPPING_LIST));
-    
-    renderMarkupOnShoppingList(shopListLocStor, currentPage)
+    const shopListLocStor = JSON.parse(
+      localStorage.getItem(STORAGE_KEY_SHOPPING_LIST)
+    );
+
+    renderMarkupOnShoppingList(shopListLocStor, currentPage);
     return currentPage;
   });
 }
 
-
 // --------------------Bидалення картки ------------------------
 
 function deleteCard(evt) {
-
   if (evt.target.classList.contains('js-shopping-book-delete')) {
     const card = evt.target.closest('.js-shopping-list-card');
     const bookId = card.dataset.bookId;
-    const shopListLocStor = JSON.parse(localStorage.getItem(STORAGE_KEY_SHOPPING_LIST));
-    const newShopListLocStor = shopListLocStor.filter(object => object.id !== bookId);
+    const shopListLocStor = JSON.parse(
+      localStorage.getItem(STORAGE_KEY_SHOPPING_LIST)
+    );
+    const newShopListLocStor = shopListLocStor.filter(
+      object => object.id !== bookId
+    );
 
-    localStorage.setItem(STORAGE_KEY_SHOPPING_LIST, JSON.stringify(newShopListLocStor));
+    localStorage.setItem(
+      STORAGE_KEY_SHOPPING_LIST,
+      JSON.stringify(newShopListLocStor)
+    );
 
     if (!newShopListLocStor.length) {
       card.remove();
@@ -201,9 +210,8 @@ function deleteCard(evt) {
 //-------- Функція зміни кількості відображення карток в залежності від ширини екрану-----------
 
 function changePagOptionsByScreenWidth() {
-
   const screenWidth = window.innerWidth;
-  
+
   if (screenWidth < 768) {
     visiblePages = 1;
     itemsPerPage = 4;
@@ -224,7 +232,6 @@ function changePagOptionsByScreenWidth() {
 // Функція зміни кількості відображення карток на сторінці в залежності від ширини екрану при першої загрузці сторінки
 
 function firstPageLoaded() {
-
   const screenWidth = window.innerWidth;
 
   if (screenWidth < 768) {
