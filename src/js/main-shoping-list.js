@@ -1,4 +1,6 @@
 import './authorization/open-authorization';
+import './support-ukraine';
+import './shopping-list';
 
 document.querySelectorAll('.nav-link').forEach(link => {
   if (
