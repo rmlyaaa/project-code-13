@@ -17,6 +17,32 @@
   font-size: 18px;
   color: inherit;
 
+  .tui-page-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+    width: 38px;
+    border: 1px solid #111111;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 18px;
+    color: inherit;
+
+    @media screen and (min-width: 768px) {
+      height: 44px;
+      width: 44px;
+    }
+  }
+
+  .tui-page-btn.tui-first,
+  .tui-page-btn.tui-prev {
+    color: #ffffff;
+    cursor: pointer;
+    background: #111111;
+    border-color: #111111;
+  }
+
   @media screen and (min-width: 768px) {
     height: 44px;
     width: 44px;
@@ -34,8 +60,12 @@
 .tui-page-btn.tui-prev {
   margin-right: 6px;
 
-  @media screen and (min-width: 768px) {
-    margin-right: 16px;
+  .tui-page-btn.tui-prev {
+    margin-right: 6px;
+
+    @media screen and (min-width: 768px) {
+      margin-right: 16px;
+    }
   }
 }
 
@@ -77,7 +107,7 @@
 
 .tui-page-btn.tui-is-disabled.tui-first,
 .tui-page-btn.tui-is-disabled.tui-prev {
-  color: paragraph-colour;
+  color: $paragraph-colour;
   cursor: pointer;
   background: #111111;
   border-color: #111111;
@@ -86,7 +116,7 @@
 
 .tui-page-btn.tui-is-disabled.tui-next,
 .tui-page-btn.tui-is-disabled.tui-last {
-  color: paragraph-colour;
+  color: $paragraph-colour;
   cursor: pointer;
   background: #eac645;
   border-color: #111111;

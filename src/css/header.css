@@ -2,7 +2,7 @@
   width: 100%;
   max-height: 64px;
   padding: 18px 20px;
-  margin: auto;
+  margin: 0 auto;
   background-color: var(--primary-back-color);
   border: 2px solid;
   border-radius: 0 0 8px 8px;
@@ -24,7 +24,7 @@
   }
 }
 
-@media screen and (min-width: 1140px) {
+@media screen and (min-width: 1440px) {
   .container {
     max-width: 1440px;
     max-height: 72px;
