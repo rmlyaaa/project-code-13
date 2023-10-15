@@ -1,0 +1,23 @@
+.btn {
+  border-radius: 40px;
+  border: 2px solid var(--border-color);
+
+  padding: 14px 28px;
+  color: var(--text-color);
+  text-transform: uppercase;
+  font-weight: 700;
+
+  transition: background-color var(--animation-speed),
+    color var(--animation-speed);
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--accent-color);
+  color: var(--accent-text-color);
+}
+
+.see-more-btn {
+  margin-left: auto;
+  margin-bottom: 40px;
+}

@@ -1,24 +1,38 @@
 @import url('./fonts.css');
 @import url('./reset.css');
 @import url('./header.css');
+@import url('./modalAuthorization.css');
+@import url('./btn.css');
+@import url('./books.css');
+@import url('./loader.css');
 @import url('./support-ukraine');
+/* Modal */
+@import url('./modal.css');
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --primary-back-color: #FFFFFF;
-  --sec-primary-back-color: #F6F6F6;
+  --primary-back-color: #ffffff;
+  --sec-primary-back-color: #f6f6f6;
   --dark-back-color: #111111;
   --sec-dark-back-color: #202024;
-  --dec-color: #EAC645;
+  --dec-color-yellow: #eac645;
+  --dec-color-blue: #4f2ee8;
+
+  --text-color: #111111;
+  --sec-text-color: #b4afaf;
+  --accent-color: #404bbf;
+  --accent-text-color: #ffffff;
+  --border-color: #404bbf;
+  --animation-speed: 500ms ease-in-out;
 }
 
 body {
+  position: relative;
   padding-top: 0;
   margin: 0;
   font-family: DM Sans;
