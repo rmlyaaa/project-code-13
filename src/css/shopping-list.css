@@ -8,12 +8,12 @@
 }
 
 .shopping-list-title {
-    color: #111;
-    font-family: DM Sans;
-    font-size: 32px;
-    line-height: 1.19;
-    letter-spacing: -1.28px;
-    margin-bottom: 40px;
+  color: #111;
+  font-family: DM Sans;
+  font-size: 32px;
+  line-height: 1.19;
+  letter-spacing: -1.28px;
+  margin-bottom: 40px;
 }
 
 .shopping-list-title-span {
@@ -45,7 +45,6 @@
   padding: 14px;
   display: flex;
   position: relative;
-
 }
 
 .shopping-card-img {
@@ -87,7 +86,6 @@
   font-weight: 400;
   line-height: 1.17;
   display: block;
-
 }
 
 
@@ -107,7 +105,6 @@
   line-height: 1.29;
   display: -webkit-box;
   overflow: hidden;
- 
 }
 
 .shopping-card-footer {
@@ -120,15 +117,15 @@
 
 
 .shopping-card-author {
-      max-width: 95px;
-      letter-spacing: -.04em;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      color: #b4afaf;
-      font-size: 12px;
-      font-style: italic;
-      font-weight: 400;
-      line-height: 1.17;
+  max-width: 95px;
+  letter-spacing: -.04em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #b4afaf;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.17;
 }
 
 .shopping-card-shoplist {
@@ -144,8 +141,7 @@
 
 .shopping-link-amazon {
   width: 32px;
-  height: 11px;
-  
+  height: 11px; 
 }
 
 .shopping-link-apple {
@@ -195,7 +191,6 @@
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  
 }
 
 .shopping-text-empty {
@@ -217,12 +212,17 @@
   display: block;
 }
 
+.page-pagination {
+  margin-top: 20px;
+}
+
 
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
     padding: 40px 32px;  
   }
+
   .shopping-list-title {
     font-size: 48px;
     line-height: 1.08;
@@ -249,6 +249,7 @@
   object-fit: cover;
   border-radius: 8px;
 }
+
 .shopping-book-delete {
   width: 34px;
   height: 34px;
@@ -259,13 +260,11 @@
 .shopping-icon-delete {
   width: 18px;
   height: 18px;
-
 }
 
 .shopping-link-amazon {
   width: 48px;
   height: 15px;
-  
 }
 
 .shopping-link-apple {
@@ -287,13 +286,22 @@
   height: 48px;
 }
 
+
+.page-pagination {
+  margin-top: 40px;
 }
+
 
 @media screen and (min-width: 1440px) {
-  .container {
-    max-width: 1440px;
-    padding: 40px 24px 40px 40px;
-    
-  }
-
+.container {
+  max-width: 1440px;
+  padding: 40px 24px 40px 40px; 
 }
+}
+
+    
+
+
+
+
+
