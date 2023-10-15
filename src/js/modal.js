@@ -45,7 +45,7 @@ refs.closeModal.addEventListener('click', closeModalWindow);
 function openModalWindow(evt) {
   evt.preventDefault();
   const clickedElement = evt.target;
-  const closestLi = clickedElement.closest('.book-item');
+  const closestLi = clickedElement.closest('.book-item, .book-item-in-categoty');
   if (!closestLi) {
     return;
   }
@@ -92,11 +92,11 @@ function onEscPressed(evt) {
   }
 }
 
-async function getBookOnId(bookId) {
+async function getBookOnId(Id) {
   const url = 'https://books-backend.p.goit.global/books/';
   try {
   
-    const getData = await axios.get(`${url}${bookId}`);
+    const getData = await axios.get(`${url}${Id}`);
     return getData.data;
   } catch (error) {
     console.log(error);
