@@ -39,23 +39,23 @@
   cursor: pointer;
 }
 
-.book-category-wrap::-webkit-scrollbar {
+/* .book-category-wrap::-webkit-scrollbar {
   width: 8px;
 }
 
 .book-category-wrap::-webkit-scrollbar-thumb {
   border-radius: 12px;
   background: var(--scroll-bar-color);
-}
+} */
 
-/* .book-category-list::-webkit-scrollbar {
+.book-category-list::-webkit-scrollbar {
   width: 8px;
 }
 
 .book-category-list::-webkit-scrollbar-thumb {
   border-radius: 12px;
   background: var(--scroll-bar-color);
-} */
+}
 
 .active-category {
   font-weight: 700;
