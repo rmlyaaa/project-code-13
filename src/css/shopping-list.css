@@ -11,6 +11,7 @@
   width: 100%;
   padding: 40px 20px;
   overflow: hidden;
+  margin: auto;
 }
 
 .shopping-list-title {
@@ -226,10 +227,20 @@
   margin-top: 20px;
 }
 
+@media screen and (max-width: 767px) {
+  .shopping-list-container {
+    max-width: 428px;
+    width: 100%;
+    padding: 0px 32px;
+  }
+}
+
+
 @media screen and (min-width: 768px) {
   .shopping-list-container {
     max-width: 768px;
-    padding: 40px 32px;
+    width: 100%;
+    padding: 0px 32px;
   }
 }
 

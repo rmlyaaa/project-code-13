@@ -7,11 +7,18 @@
 }
 
 .shopping-main-wrapper {
-  max-width: 428px;
   width: 100%;
   margin-top: 40px;
   display: flex;
   justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+  .shoping-main-wrapper {
+    max-width: 428px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
