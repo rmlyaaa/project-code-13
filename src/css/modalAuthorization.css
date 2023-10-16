@@ -2,20 +2,6 @@ body {
   margin: 0;
 }
 
-:root {
-  --bg-color: #f6f6f6;
-  --second-color: #111;
-  --text-color: rgba(17, 17, 17, 0.5);
-  --btn-text-xolor: #f3f3f3;
-}
-
-/* :root {
-  --bg-color: #202024;
-  --second-color: #f6f6f6;
-  --text-color: rgba(246, 246, 246, 0.5);
-  --btn-text-xolor: #202024;
-} */
-
 .no-scroll {
   overflow: hidden;
 }
@@ -30,7 +16,7 @@ body {
   background-color: #502ee8bb;
   opacity: 1;
   visibility: visible;
-  transition: opacity 250ms linear, visibility 250ms linear;
+  transition: opacity var(--animation-speed), visibility var(--animation-speed);
   display: flex;
   align-items: center;
 }
@@ -56,7 +42,7 @@ body {
   border: 2px solid var(--second-color);
   background: var(--bg-color);
   margin: 0 auto;
-  transition: all 250ms linear;
+  transition: all var(--animation-speed);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,7 +56,7 @@ body {
   top: 14px;
   background-color: transparent;
   border: none;
-  transition: transform 250ms linear;
+  transition: transform var(--animation-speed);
 }
 
 .modal-close-button:hover {
@@ -81,6 +67,11 @@ body {
   width: 14px;
   height: 14px;
   stroke: var(--second-color);
+}
+
+.modal-close-icon:hover,
+.modal-close-icon:focus {
+  stroke: #4f2ee8;
 }
 
 .authorization-form {
@@ -107,7 +98,7 @@ body {
   line-height: 1.125; /* 112.5% */
   letter-spacing: -0.16px;
   text-transform: uppercase;
-  transition: transform 250ms linear;
+  transition: transform var(--animation-speed);
 }
 
 .authorization-form-label:focus-within > .label-name,
@@ -158,6 +149,14 @@ body {
   line-height: 1.125; /* 112.5% */
   letter-spacing: -0.16px;
   text-transform: uppercase;
+  transition: transform var(--animation-speed);
+}
+
+.wrapper-switch-p:hover,
+.wrapper-switch-p:focus,
+.authorization-form-btn:hover,
+.authorization-form-btn:focus {
+  transform: scale(1.05);
 }
 
 .wrapper-switch {
@@ -178,6 +177,7 @@ body {
   cursor: pointer;
   border: none;
   background-color: transparent;
+  transition: transform var(--animation-speed);
 }
 
 .action-auth {
@@ -275,18 +275,25 @@ body {
     letter-spacing: -0.56px;
     display: flex;
     padding: 12px 14px;
+    transition: box-shadow var(--animation-speed);
   }
 
   .profile-btn.log-out {
-    background-color: #fff;
-    color: #111;
-    position: relative;
-    z-index: 2;
+    background-color: var(--theme-background);
+    color: var(--primary-colour);
+    border: var(--primary-colour);
+    position: absolute;
+    z-index: 5;
   }
 
   .profile-btn-icon {
     margin-left: 88px;
     stroke: #eac645;
+  }
+
+  .profile-btn:hover,
+  .profile-btn:focus {
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
   }
 
   .authorization-user {

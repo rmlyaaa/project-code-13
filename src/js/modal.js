@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { saveBDBookList } from './authorization/firebase-bd';
+import { toggleLoader } from './loader';
 import amazonImg1x from '../img/shoping-list/amazon-icon1x.png';
 import amazonImg2x from '../img/shoping-list/amazon-icon1x.png';
 import appleImg1x from '../img/shoping-list/applebook-icon1x.png';
@@ -49,7 +51,9 @@ refs.closeModal.addEventListener('click', closeModalWindow);
 function openModalWindow(evt) {
   evt.preventDefault();
   const clickedElement = evt.target;
-  const closestLi = clickedElement.closest('.book-item, .book-item-in-categoty');
+  const closestLi = clickedElement.closest(
+    '.book-item, .book-item-in-categoty'
+  );
   if (!closestLi) {
     return;
   }
@@ -69,7 +73,6 @@ function openModalWindow(evt) {
     refs.modalBtnDelEl.classList.add('is-hidden');
     refs.modaltextBottom.classList.add('is-hidden');
   }
- 
 
   getBookOnId(bookId).then(data => {
     makeMarkupModal(data);
@@ -100,7 +103,14 @@ function onEscPressed(evt) {
 async function getBookOnId(id) {
   const url = 'https://books-backend.p.goit.global/books/';
   try {
-    const getData = await axios.get(`${url}${id}`);
+    const getData = await axios
+      .get(`${url}${id}`)
+      .then(response => {
+        toggleLoader();
+        return response;
+      })
+      .catch(() => toggleLoader())
+      .finally(toggleLoader());
     return getData.data;
   } catch (error) {
     console.log(error);
@@ -117,11 +127,13 @@ function bookAddStorage(evt) {
   refs.modalBtnAddEl.classList.add('is-hidden');
   refs.modalBtnDelEl.classList.remove('is-hidden');
   refs.modaltextBottom.classList.remove('is-hidden');
+  saveBDBookList();
 }
 
 refs.modalBtnDelEl.addEventListener('click', bookDelStorage);
 
 function bookDelStorage(evt) {
+  saveBDBookList();
   evt.preventDefault();
   const savedData = JSON.parse(localStorage.getItem('ListOfBooks'));
   const cardIndex = savedData.findIndex(option => option._id === bookId);
@@ -164,4 +176,4 @@ function makeMarkupModal(obj) {
              </div>
           </div>`;
   refs.markupCard.insertAdjacentHTML('beforeend', modalMarkup);
-} 
+}
