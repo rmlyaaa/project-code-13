@@ -1,13 +1,14 @@
 .modal-mob {
+  padding-left: 20px;
+  padding-top: 64px;
+  padding-bottom: 20px;
   position: fixed;
-  z-index: 100;
+  z-index: 3;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(
-    189.32% 190.93% at 59.76% -23.42%,
-    #4f2ee8 18.03%,
-    #fff 100%
-  );
+  transform: translateY(-64px);
+  background: url('../img/mob-menu/Menu-min.png') no-repeat;
+  background-size: cover;
 }
 .is-hidden-mob {
   display: none;
@@ -16,30 +17,103 @@
   visibility: hidden;
 }
 .mob-user {
+  margin-top: 20px;
+  width: 160px;
+  height: 37px;
+  border-radius: 36px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 4px 12px;
 }
 .hiden-user-auth {
-}
-.mob-user-image {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 .mob-user-name {
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.44px;
 }
 .mob-profile-btn {
+  margin-top: 20px;
+  width: 118px;
+  height: 45px;
+  border-radius: 18px;
+  border: #fff;
+  background-color: transparent;
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.28571; /* 128.571% */
+  letter-spacing: -0.56px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 14px;
+  transition: box-shadow var(--animation-speed);
 }
 .mob-profile-btn-icon {
+  stroke: #eac645;
 }
 .mob-nav-list {
+  padding-top: 126px;
+  width: 150px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 .mob-nav-item {
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
 }
-.mob-nav-item-container {
+.mob-nav-item[aria-curent='page'] {
+  text-align: center;
+  padding: 8px 16px;
+  color: #111;
+  font-weight: 700;
+  background-color: #eac645;
 }
 .mob-nav-link {
-}
-.link {
-}
-.homepage {
+  display: flex;
+  align-items: center;
 }
 .mob-shop-icon {
+  fill: #fff;
+  margin-left: 6px;
 }
 .log-out {
+  width: 118px;
+  height: 48px;
+  border-radius: 18px;
+  border: 1.5px solid #111;
+  background: #fff;
+  color: #111;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
+  position: fixed;
+  left: 20px;
+  bottom: 120px;
 }
