@@ -39,8 +39,8 @@ body {
   width: 100%;
   height: auto;
   border-radius: 18px;
-  border: 2px solid var(--second-color);
-  background: var(--bg-color);
+  border: 2px solid #111;
+  background: #f6f6f6;
   margin: 0 auto;
   transition: all var(--animation-speed);
   display: flex;
@@ -90,7 +90,7 @@ body {
   position: absolute;
   top: 16px;
   left: 24px;
-  color: var(--second-color);
+  color: #111;
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
@@ -109,7 +109,7 @@ body {
 .authorization-form-input {
   padding-left: 24px;
   padding-right: 40px;
-  color: var(--second-color);
+  color: #111;
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
@@ -119,7 +119,7 @@ body {
   width: 225px;
   height: 44px;
   border-radius: 40px;
-  border: 2px solid var(--second-color);
+  border: 2px solid #111;
   background-color: transparent;
 }
 
@@ -133,15 +133,15 @@ body {
   right: 24px;
   width: 18px;
   height: 18px;
-  stroke: var(--second-color);
+  stroke: #111;
 }
 
 .authorization-form-btn {
   width: 294px;
   height: 50px;
   border-radius: 40px;
-  background-color: var(--second-color);
-  color: var(--btn-text-xolor);
+  background-color: #111;
+  color: #f3f3f3;
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
@@ -166,7 +166,7 @@ body {
 }
 
 .wrapper-switch-p {
-  color: var(--text-color);
+  color: rgba(17, 17, 17, 0.5);
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
@@ -279,9 +279,8 @@ body {
   }
 
   .profile-btn.log-out {
-    background-color: var(--theme-background);
+    background-color: #fff;
     color: var(--primary-colour);
-    border: var(--primary-colour);
     position: absolute;
     z-index: 5;
   }
