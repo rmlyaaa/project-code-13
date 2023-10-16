@@ -28,6 +28,7 @@
   line-height: 1.08; /* 108.333% */
   letter-spacing: -1.92px;
   margin-bottom: 40px;
+  color: var(--primary-colour);
 }
 
 .book-category-name-accent {
@@ -36,11 +37,19 @@
 
 .book-category-subname {
   margin-bottom: 18px;
-  color: var(--sec-text-color);
+  color: var(--primary-colour);
 
   line-height: 1.71;
   letter-spacing: 0.42px;
   text-transform: uppercase;
+}
+
+.book-name {
+  color: var(--primary-colour);
+}
+
+.book-autor {
+  color: var(--primary-colour);
 }
 
 @media screen and (max-width: 767px) {
