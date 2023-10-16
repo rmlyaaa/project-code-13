@@ -1,0 +1,45 @@
+.modal-mob {
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    189.32% 190.93% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #fff 100%
+  );
+}
+.is-hidden-mob {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.mob-user {
+}
+.hiden-user-auth {
+}
+.mob-user-image {
+}
+.mob-user-name {
+}
+.mob-profile-btn {
+}
+.mob-profile-btn-icon {
+}
+.mob-nav-list {
+}
+.mob-nav-item {
+}
+.mob-nav-item-container {
+}
+.mob-nav-link {
+}
+.link {
+}
+.homepage {
+}
+.mob-shop-icon {
+}
+.log-out {
+}

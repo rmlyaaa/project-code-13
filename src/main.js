@@ -6,6 +6,7 @@ import './js/modal';
 import './js/authorization/open-authorization';
 import './js/support-ukraine';
 import './js/go-top';
+import './js/mob-menu';
 
 /* active-link script */
 document.querySelectorAll('.nav-link').forEach(link => {
