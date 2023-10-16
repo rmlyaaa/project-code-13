@@ -1,5 +1,5 @@
 import { createUser, loginUser, logOutUser } from './firebase-api';
-import { loadBDList } from './firebase-bd';
+import { loadBDBookList } from './firebase-bd';
 import { showError } from '../handler';
 import { toggleLoader } from '../loader';
 
@@ -69,7 +69,7 @@ function signIn() {
     .then(() => {
       toggleLoader();
       refs.modal.classList.toggle('is-hidden-authorization');
-      loadBDList();
+      loadBDBookList();
       markupUser();
       refs.aForm.reset();
     })

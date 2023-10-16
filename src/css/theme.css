@@ -1,0 +1,138 @@
+.hight {
+  --primary-colour: #111111;
+  --theme-background: #ffffff;
+  --modal-background: #f6f6f6;
+  --hover-theme: #4f2ee8;
+  --main-background: #F6F6F6;
+}
+
+.dark {
+  --primary-colour:#FFFFFF;
+  --theme-background: #111111;
+  --modal-background: #202024;
+  --hover-theme: #eac645;
+  --paragraph-colour: #B4AFAF;
+  --secondary-colour: #FFFFFF;
+}
+
+/* shopping list */
+
+.dark .shopping-list-title {
+  color: var(--primary-back-color);
+}
+
+.dark .shopping-text-empty {
+  color: var(--primary-back-color);
+}
+
+/* modal authorization */
+
+.dark .modal-authorization {
+  border: 2px solid var(--primary-back-color);
+  background: var(--sec-dark-back-color);
+}
+
+.dark .modal-close-icon {
+  stroke: var(--primary-back-color);
+}
+
+.dark .authorization-form-input {
+  color: var(--primary-back-color);
+  border: 2px solid var(--primary-back-color);
+}
+
+.dark .label-icon {
+  stroke: var(--primary-back-color);
+}
+
+.dark .authorization-form-label .label-name {
+  color: var(--primary-back-color);
+}
+
+.dark .authorization-form-btn {
+  background-color: var(--primary-back-color);
+  color: var(--text-color);
+}
+
+
+/* dark */
+
+.dark {
+    background-color: var( --modal-background);
+  }
+
+.header {
+    background-color: var(--modal-background); 
+    border: 1.5px solid var(--secondary-colour); 
+    border-radius: 0px 0px 8px 8px;
+  }
+
+  .nav-item, .shop-icon {
+    color: var(--primary-colour);
+    fill: var(--primary-colour);
+  }
+
+.dark .nav-item:hover, .nav-item:focus,
+.dark .shop-icon:hover,.shop-icon:focus {
+  color: var(--dark-back-color);
+  fill: var(--dark-back-color);
+}
+
+.dark .list-item {
+  margin-bottom: 24px;
+  color: rgba(200, 200, 200, 0.6);
+  font-family: DM Sans;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.32px;
+
+   transition: font-weight 250ms cubic-bezier(0.4, 0, 0.2, 1),
+   text-transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+   color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .list-item:hover,
+.list-item:focus {
+  color: var(--hover-theme);
+}
+
+.dark .see-more-btn {
+  background: var(--primary-back-colo);
+  color: var(--primary-colour);
+}
+
+.dark .nav-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 36px;
+  color: var(--primary-back-color); 
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  transition: background 500ms cubic-bezier(.4,0,.2,1);
+}
+
+.dark .nav-item:hover, .nav-item:focus {
+  font-weight: 700;
+  color: var(--dark-back-colo); 
+  background: var(--dec-color); 
+  padding: 8px 16px;
+}
+
+.dark .nav-item-current {
+  font-weight: 700;
+  color: var(--dark-back-color);
+  background: var(--dec-color-yellow);
+  border-radius: 36px;
+  padding: 8px 16px;
+}
+
+.logo-icon {
+  fill: var(--primary-colour);
+}
+
+.menu-icon  {
+  fill: var(--primary-colour);
+}

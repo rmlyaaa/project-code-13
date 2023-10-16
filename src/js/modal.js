@@ -1,4 +1,10 @@
 import axios from 'axios';
+import { saveBDBookList } from './authorization/firebase-bd';
+import { toggleLoader } from './loader';
+import amazonImg1x from '../img/shoping-list/amazon-icon1x.png';
+import amazonImg2x from '../img/shoping-list/amazon-icon1x.png';
+import appleImg1x from '../img/shoping-list/applebook-icon1x.png';
+import appleImg2x from '../img/shoping-list/applebook-icon2x.png';
 
 const scrollControl = {
   scrollPosition: 0,
@@ -45,7 +51,9 @@ refs.closeModal.addEventListener('click', closeModalWindow);
 function openModalWindow(evt) {
   evt.preventDefault();
   const clickedElement = evt.target;
-  const closestLi = clickedElement.closest('.book-item, .book-item-in-categoty');
+  const closestLi = clickedElement.closest(
+    '.book-item, .book-item-in-categoty'
+  );
   if (!closestLi) {
     return;
   }
@@ -65,7 +73,6 @@ function openModalWindow(evt) {
     refs.modalBtnDelEl.classList.add('is-hidden');
     refs.modaltextBottom.classList.add('is-hidden');
   }
- 
 
   getBookOnId(bookId).then(data => {
     makeMarkupModal(data);
@@ -96,7 +103,14 @@ function onEscPressed(evt) {
 async function getBookOnId(id) {
   const url = 'https://books-backend.p.goit.global/books/';
   try {
-    const getData = await axios.get(`${url}${id}`);
+    const getData = await axios
+      .get(`${url}${id}`)
+      .then(response => {
+        toggleLoader();
+        return response;
+      })
+      .catch(() => toggleLoader())
+      .finally(toggleLoader());
     return getData.data;
   } catch (error) {
     console.log(error);
@@ -113,11 +127,13 @@ function bookAddStorage(evt) {
   refs.modalBtnAddEl.classList.add('is-hidden');
   refs.modalBtnDelEl.classList.remove('is-hidden');
   refs.modaltextBottom.classList.remove('is-hidden');
+  saveBDBookList();
 }
 
 refs.modalBtnDelEl.addEventListener('click', bookDelStorage);
 
 function bookDelStorage(evt) {
+  saveBDBookList();
   evt.preventDefault();
   const savedData = JSON.parse(localStorage.getItem('ListOfBooks'));
   const cardIndex = savedData.findIndex(option => option._id === bookId);
@@ -146,15 +162,18 @@ function makeMarkupModal(obj) {
            <p class="modal-book-deskr" id="style-4">${description}</p>  
              <div class="modal-book-links">
                <a href="${buy_links[0].url}" target="_blank" rel="noreferrer noopener" aria-label="Link to Amazon">
-                 <img srcset="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/amazon.png"
-                 src="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/amazon.png" loading="lazy"
-                 alt="Logo Amazon" width="32px" class="link-amazon"/>
+               <img class="link-amazon" srcset="
+               ${amazonImg1x},
+               ${amazonImg2x}" 
+               src="${amazonImg1x}" alt="Amazon"/>
                </a>
                <a href="${buy_links[1].url}" target="_blank" rel="noreferrer noopener" aria-label="Link to Apple book shop">
-                 <img srcset="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/apple.png" 
-                 src="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/apple.png" loading="lazy" alt="Logo Apple book store" width="16px" class="link-apple"/>
+               <img loading="lazy" class="link-apple" srcset=" 
+               ${appleImg1x},
+               ${appleImg2x}" 
+               src="${appleImg1x}" alt="Apple" />
                </a>
              </div>
           </div>`;
   refs.markupCard.insertAdjacentHTML('beforeend', modalMarkup);
-} 
+}
