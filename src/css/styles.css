@@ -10,6 +10,8 @@
 @import url('./support-ukraine');
 @import url('./shopping-list.css');
 @import url('./theme.css');
+@import url("./shopping-list.css");
+@import url("./psgination.css");
 /* Modal */
 @import url('./modal.css');
 

@@ -45,7 +45,7 @@ refs.closeModal.addEventListener('click', closeModalWindow);
 function openModalWindow(evt) {
   evt.preventDefault();
   const clickedElement = evt.target;
-  const closestLi = clickedElement.closest('.book-item');
+  const closestLi = clickedElement.closest('.book-item, .book-item-in-categoty');
   if (!closestLi) {
     return;
   }

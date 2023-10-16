@@ -1,6 +1,9 @@
 import './theme-switch';
 
 import './authorization/open-authorization';
+import './support-ukraine';
+import './shopping-list';
+
 document.querySelectorAll('.nav-link').forEach(link => {
   if (
     window.location.pathname.endsWith(link.attributes.href.value) ||

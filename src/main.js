@@ -2,10 +2,11 @@ import './js/theme-switch';
  
 import './js/category';
 import './js/book-list-render';
-import './js/modal'
+import './js/modal';
+import './js/authorization/open-authorization';
+import './js/support-ukraine';
 
 /* active-link script */
-import './js/authorization/open-authorization';
 document.querySelectorAll('.nav-link').forEach(link => {
   if (
     window.location.pathname.endsWith(link.attributes.href.value) ||
