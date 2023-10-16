@@ -1,5 +1,5 @@
 import './js/theme-switch';
- 
+
 import './js/category';
 import './js/book-list-render';
 import './js/modal';
@@ -17,5 +17,3 @@ document.querySelectorAll('.nav-link').forEach(link => {
     link.setAttribute('aria-current', 'page');
   }
 });
-
-/* */
