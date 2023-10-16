@@ -4,7 +4,7 @@ themeSwitcher.addEventListener('input', toggleTheme);
 
 function setTheme(themeName) {
  localStorage.setItem('theme', themeName);
- document.documentElement.className = themeName;
+ document.body.className = themeName;
 }
 
 function toggleTheme() {
