@@ -1,4 +1,8 @@
 import axios from 'axios';
+import amazonImg1x from '../img/shoping-list/amazon-icon1x.png';
+import amazonImg2x from '../img/shoping-list/amazon-icon1x.png';
+import appleImg1x from '../img/shoping-list/applebook-icon1x.png';
+import appleImg2x from '../img/shoping-list/applebook-icon2x.png';
 
 const scrollControl = {
   scrollPosition: 0,
@@ -146,13 +150,16 @@ function makeMarkupModal(obj) {
            <p class="modal-book-deskr" id="style-4">${description}</p>  
              <div class="modal-book-links">
                <a href="${buy_links[0].url}" target="_blank" rel="noreferrer noopener" aria-label="Link to Amazon">
-                 <img srcset="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/amazon.png"
-                 src="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/amazon.png" loading="lazy"
-                 alt="Logo Amazon" width="32px" class="link-amazon"/>
+               <img class="link-amazon" srcset="
+               ${amazonImg1x},
+               ${amazonImg2x}" 
+               src="${amazonImg1x}" alt="Amazon"/>
                </a>
                <a href="${buy_links[1].url}" target="_blank" rel="noreferrer noopener" aria-label="Link to Apple book shop">
-                 <img srcset="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/apple.png" 
-                 src="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/apple.png" loading="lazy" alt="Logo Apple book store" width="16px" class="link-apple"/>
+               <img loading="lazy" class="link-apple" srcset=" 
+               ${appleImg1x},
+               ${appleImg2x}" 
+               src="${appleImg1x}" alt="Apple" />
                </a>
              </div>
           </div>`;
