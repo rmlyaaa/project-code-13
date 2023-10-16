@@ -14,7 +14,6 @@
   .shopping-main-wrapper {
     max-width: 1440px;
     margin: auto;
-
     gap: 40px;
   }
 
@@ -27,6 +26,7 @@
     max-width: 356px;
     margin-top: 40px;
   }
+
   .shopping-main-wrapper {
     max-width: 1440px;
     width: 100%;
