@@ -136,7 +136,7 @@
     display: flex;
     align-items: center;
     gap: 24px;
-    width: 208px;
+    width: 245px;
   }
 
   .nav-link {
@@ -171,8 +171,8 @@
   .right-menu {
     display: flex;
     align-items: center;
-    gap: 24px;
-    margin-left: 78px;
+    gap: 10px;
+    margin-left: 66px;
   }
 
   /* .checkbox {
