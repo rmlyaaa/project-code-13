@@ -1,3 +1,7 @@
+.shop {
+  display: flex;
+}
+
 .support-ukraine-section {
   display: none;
 }
@@ -33,4 +37,12 @@
     margin: 0 auto;
     display: flex;
   }
+}
+
+.shop-element-1 {
+  order: 1;
+}
+
+.shop-element-2 {
+  order: 2;
 }
