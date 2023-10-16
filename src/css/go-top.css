@@ -1,0 +1,39 @@
+.go-top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    cursor: pointer;
+    display: none;
+    
+    /* color: rgba(79, 46, 232, 0.30); */
+    border: none;
+    background-color: rgba(79, 46, 232, 0.30);
+    height: 64px;
+    width: 64px;
+    border-radius: 50%; 
+    z-index: 15;
+  }
+  .go-top-inner{
+    border: none;
+    background-color: #4f2ee8;
+    height: 54px;
+    width: 54px;
+    border-radius: 50%; 
+    z-index: 20;
+  
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+  }
+  
+  .go-top-svg{
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+  }
+
+  .go-top--show {
+    display: block;
+  }
