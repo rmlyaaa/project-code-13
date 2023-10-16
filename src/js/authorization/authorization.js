@@ -96,7 +96,7 @@ function markupUser() {
   if (localStorage.getItem(USER_KEY)) {
     refs.profileName.innerHTML = JSON.parse(
       localStorage.getItem(USER_KEY)
-    ).displayName;
+    ).displayName.split(' ')[0];
     return;
   }
   refs.profileName.innerHTML = 'Name';

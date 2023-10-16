@@ -3,16 +3,16 @@
   --theme-background: #ffffff;
   --modal-background: #f6f6f6;
   --hover-theme: #4f2ee8;
-  --main-background: #F6F6F6;
+  --main-background: #f6f6f6;
 }
 
 .dark {
-  --primary-colour: #FFFFFF;
+  --primary-colour: #ffffff;
   --theme-background: #111111;
   --modal-background: #202024;
   --hover-theme: #eac645;
-  --paragraph-colour: #B4AFAF;
-  --secondary-colour: #FFFFFF;
+  --paragraph-colour: #b4afaf;
+  --secondary-colour: #ffffff;
 }
 
 /* shopping list */
@@ -54,6 +54,19 @@
   color: var(--text-color);
 }
 
+.dark .wrapper-switch-p {
+  color: rgba(246, 246, 246, 0.5);
+}
+
+.dark .action-auth {
+  color: #4f2ee8;
+}
+
+.dark .profile-btn.log-out {
+  background-color: #111;
+  color: #fff;
+  border: 1.5px solid #fff;
+}
 
 /* dark */
 
@@ -114,7 +127,7 @@
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.04em;
-  transition: background 500ms cubic-bezier(.4, 0, .2, 1);
+  transition: background 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark .nav-item:hover,
