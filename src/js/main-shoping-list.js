@@ -1,3 +1,5 @@
+import './theme-switch';
+
 import './authorization/open-authorization';
 import './support-ukraine';
 import './shopping-list';

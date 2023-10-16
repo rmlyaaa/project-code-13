@@ -36,7 +36,7 @@
   font-size: 22px;
   color: #fff;
   text-align: center;
-  animation: glow 15s ease-in-out infinite;
+  animation: glow 12s ease-in-out infinite;
 }
 
 @keyframes glow {
@@ -46,12 +46,12 @@
     text-shadow: 0 0 0px #fff;
   }
 
-  44%,
-  56% {
+  24%,
+  36% {
     text-shadow: 0 0 0px #fff;
   }
 
-  50% {
+  30% {
     text-shadow: 0 0 5px #fff, 0 0 10px #eff617, 0 0 15px #eff617,
       0 0 20px #eff617, 0 0 25px #eff617;
   }
