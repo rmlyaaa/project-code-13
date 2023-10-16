@@ -12,6 +12,7 @@
 @import url('./theme.css');
 @import url("./shopping-list.css");
 @import url("./psgination.css");
+@import url("./go-top.css");
 /* Modal */
 @import url('./modal.css');
 
@@ -54,3 +55,4 @@ body {
   background-color: var(--sec-primary-back-color);
   color: var(--dark-back-color);
 }
+
