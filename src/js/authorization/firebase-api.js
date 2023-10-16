@@ -53,13 +53,17 @@ export const logOutUser = async () => {
 };
 
 export async function loadDBList() {
-  const userId = JSON.parse(localStorage.getItem(USER_KEY)).uid;
-  return await get(child(ref(database), `users/${userId}`));
+  if (localStorage.getItem(USER_KEY)) {
+    const userId = JSON.parse(localStorage.getItem(USER_KEY)).uid;
+    return await get(child(ref(database), `users/${userId}`));
+  }
 }
 
-export async function saveDBList() {
-  const userId = JSON.parse(localStorage.getItem(USER_KEY)).uid;
-  return await set(ref(database, 'users/' + userId), {
-    books: books,
-  });
+export async function saveDBList(books) {
+  if (localStorage.getItem(USER_KEY)) {
+    const userId = JSON.parse(localStorage.getItem(USER_KEY)).uid;
+    return await set(ref(database, 'users/' + userId), {
+      books: JSON.stringify(books),
+    });
+  }
 }
