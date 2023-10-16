@@ -59,13 +59,14 @@
 }
 
 .modalWindow-container {
+  box-sizing: border-box;
   transform: scale(1);
   transition: transform 300ms ease-in-out;
   opacity: 1;
   overflow: hidden;
 
-  width: 750px;
-  height: 500px;
+  width: 335px;
+  height: auto;
   background-color: #fff;
   border: 2px solid #111;
   border-radius: 18px;
@@ -84,7 +85,7 @@
 }
 
 .dark .modal-close-icon {
-  stroke: #FFF;
+  stroke: #fff;
 }
 
 .dark .modalWindow-close {
@@ -177,8 +178,6 @@
   filter: brightness(0) invert(1);
 }
 
-
-
 .link-apple {
   filter: grayscale(100%);
 }
@@ -261,13 +260,12 @@
 }
 
 .dark .modalWindow-text {
-  color: rgba(255, 255, 255, 0.50);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 @media only screen and (min-width: 768px) {
   .modalWindow-container {
     width: 579px;
-    height: 700px;
   }
 
   .modal-card {
@@ -280,7 +278,6 @@
     top: 18px;
     right: 18px;
   }
-
 
   .modal-book-img {
     width: 192px;

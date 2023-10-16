@@ -3,14 +3,14 @@
   margin: 0;
 }
 
-@media screen and (max-width: 377px) {
+@media screen and (max-width: 375px) {
   .books-categories-sections {
     max-width: 100%;
     margin-left: 0px;
   }
 }
 
-@media screen and (min-width: 377px) and (max-width: 767px) {
+@media screen and (min-width: 375px) and (max-width: 767px) {
   .books-categories-sections {
     max-width: 335px;
   }
