@@ -4,8 +4,6 @@
   padding: 18px 20px;
   margin: auto;
   background-color: var(--theme-background);
-  margin: 0 auto;
-  background-color: var(--primary-back-color);
   border: 2px solid;
   border-radius: 0 0 8px 8px;
 }
