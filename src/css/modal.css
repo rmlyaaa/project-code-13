@@ -54,7 +54,7 @@
   visibility: visible;
   pointer-events: initial;
   overflow: auto;
-  z-index: 9999;
+  z-index: 99;
 }
 
 .modalWindow-container {

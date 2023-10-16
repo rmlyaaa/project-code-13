@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { saveBDBookList } from './authorization/firebase-bd';
+import { toggleLoader } from './loader';
 import amazonImg1x from '../img/shoping-list/amazon-icon1x.png';
 import amazonImg2x from '../img/shoping-list/amazon-icon1x.png';
 import appleImg1x from '../img/shoping-list/applebook-icon1x.png';
@@ -102,7 +103,14 @@ function onEscPressed(evt) {
 async function getBookOnId(id) {
   const url = 'https://books-backend.p.goit.global/books/';
   try {
-    const getData = await axios.get(`${url}${id}`);
+    const getData = await axios
+      .get(`${url}${id}`)
+      .then(response => {
+        toggleLoader();
+        return response;
+      })
+      .catch(() => toggleLoader())
+      .finally(toggleLoader());
     return getData.data;
   } catch (error) {
     console.log(error);

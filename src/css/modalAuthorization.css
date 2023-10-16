@@ -2,20 +2,6 @@ body {
   margin: 0;
 }
 
-:root {
-  --bg-color: #f6f6f6;
-  --second-color: #111;
-  --text-color: rgba(17, 17, 17, 0.5);
-  --btn-text-xolor: #f3f3f3;
-}
-
-/* :root {
-  --bg-color: #202024;
-  --second-color: #f6f6f6;
-  --text-color: rgba(246, 246, 246, 0.5);
-  --btn-text-xolor: #202024;
-} */
-
 .no-scroll {
   overflow: hidden;
 }
@@ -293,10 +279,11 @@ body {
   }
 
   .profile-btn.log-out {
-    background-color: #fff;
-    color: #111;
-    position: relative;
-    z-index: 2;
+    background-color: var(--theme-background);
+    color: var(--primary-colour);
+    border: var(--primary-colour);
+    position: absolute;
+    z-index: 5;
   }
 
   .profile-btn-icon {
