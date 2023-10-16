@@ -65,6 +65,7 @@ function openModalWindow(evt) {
     refs.modalBtnDelEl.classList.add('is-hidden');
     refs.modaltextBottom.classList.add('is-hidden');
   }
+ 
 
   getBookOnId(bookId).then(data => {
     makeMarkupModal(data);
@@ -76,7 +77,7 @@ function closeModalWindow(evt) {
   refs.modalWindow.classList.add('is-hidden');
   scrollControl.enabledScroll();
   window.removeEventListener('keydown', onEscPressed);
-  modalWindow.removeEventListener('click', onBackdropclick);
+  refs.modalWindow.removeEventListener('click', onBackdropclick);
 }
 
 function onBackdropclick(evt) {
@@ -95,7 +96,6 @@ function onEscPressed(evt) {
 async function getBookOnId(id) {
   const url = 'https://books-backend.p.goit.global/books/';
   try {
-  
     const getData = await axios.get(`${url}${id}`);
     return getData.data;
   } catch (error) {
@@ -116,9 +116,9 @@ function bookAddStorage(evt) {
 }
 
 refs.modalBtnDelEl.addEventListener('click', bookDelStorage);
+
 function bookDelStorage(evt) {
   evt.preventDefault();
-
   const savedData = JSON.parse(localStorage.getItem('ListOfBooks'));
   const cardIndex = savedData.findIndex(option => option._id === bookId);
   savedData.splice(cardIndex, 1);
@@ -157,4 +157,4 @@ function makeMarkupModal(obj) {
              </div>
           </div>`;
   refs.markupCard.insertAdjacentHTML('beforeend', modalMarkup);
-}
+} 
