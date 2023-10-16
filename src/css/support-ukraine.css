@@ -57,12 +57,7 @@
   }
 }
 
-.icon-flipped {
-  transform: scaleX(-1);
-  -moz-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  -ms-transform: scaleX(-1);
-}
+
 
 .support-ukraine-list-container {
   overflow: hidden;
@@ -99,6 +94,7 @@
 .support-img {
   filter: brightness(0) invert(1);
   height: 32px;
+ 
 }
 
 .support-ukraine-btn {
