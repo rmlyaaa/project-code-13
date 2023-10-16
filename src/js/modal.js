@@ -65,6 +65,7 @@ function openModalWindow(evt) {
     refs.modalBtnDelEl.classList.add('is-hidden');
     refs.modaltextBottom.classList.add('is-hidden');
   }
+ 
 
   getBookOnId(bookId).then(data => {
     makeMarkupModal(data);
@@ -157,4 +158,4 @@ function makeMarkupModal(obj) {
              </div>
           </div>`;
   refs.markupCard.insertAdjacentHTML('beforeend', modalMarkup);
-}
+} 
