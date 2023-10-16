@@ -72,9 +72,22 @@
   padding-right: 20px;
 }
 
+.dark .modalWindow-container {
+  background-color: #202024;
+  border: 2px solid #fff;
+}
+
 .modal-close-icon {
   stroke: #111111;
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .modal-close-icon {
+  stroke: #FFF;
+}
+
+.dark .modalWindow-close {
+  background-color: #202024;
 }
 
 .modal-close-icon:hover {
@@ -116,6 +129,10 @@
   letter-spacing: -0.64px;
 }
 
+.dark .modal-book-title {
+  color: #fff;
+}
+
 .modal-book-author {
   margin-top: 4px;
   font-size: 12px;
@@ -139,6 +156,10 @@
   color: #111;
 }
 
+.dark .modal-book-deskr {
+  color: #fff;
+}
+
 .modal-book-links {
   display: flex;
   gap: 20px;
@@ -151,8 +172,18 @@
   filter: grayscale(100%);
 }
 
+.dark .link-amazon {
+filter: brightness(0) invert(1);
+}
+
+
+
 .link-apple {
   filter: grayscale(100%);
+}
+
+.dark .link-apple {
+  
 }
 
 .link-amazon:hover,
@@ -160,6 +191,11 @@
 .link-apple:hover,
 .link-apple:focus {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+.dark .link-amazon:hover,
+.dark .link-apple:hover {
+  filter: drop-shadow(0px 3px 3px rgba(225, 225,225, 0.35));
 }
 
 .modalWindow-add-book {
@@ -180,6 +216,11 @@
   background-color: #fff;
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+}
+
+.dark .modalWindow-btn-1,
+.dark .modalWindow-btn-2 {
+  background-color: #202024;
 }
 
 .modalWindow-btn-1:hover,
@@ -204,6 +245,11 @@
   text-transform: uppercase;
 }
 
+.dark .modalWindow-btn-add,
+.dark .modalWindow-btn-delete {
+  color: #fff;
+}
+
 .modalWindow-text {
   width: 242px;
   height: 36px;
@@ -215,6 +261,10 @@
   letter-spacing: -0.4px;
   text-align: center;
   color: rgba(17, 17, 17, 0.5);
+}
+
+.dark .modalWindow-text {
+  color: rgba(255, 255, 255, 0.50);
 }
 
 @media only screen and (min-width: 768px) {
