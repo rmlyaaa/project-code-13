@@ -80,8 +80,7 @@ function renderMarkupOnShoppingList(arr, page) {
       <li class="shopping-list-card js-shopping-list-card" data-book-id="${_id}">
         <div class="">
           <img loading="lazy" class="shopping-card-img" src="${book_image}" alt="${title}" />
-        </div>
-        </div class="">
+        </div>        
         <button type="button" aria-label="delete" class="shopping-book-delete js-shopping-book-delete">
           <svg class="shopping-icon-delete">
             <use href="${svgBasket}#icon-basket"></use>
@@ -91,31 +90,32 @@ function renderMarkupOnShoppingList(arr, page) {
             <h2 class="shopping-card-title">${title.trim()}</h2>
             <p class="shopping-card-category">${list_name.trim()}</p>   
             <p class="shopping-card-description">${description.trim()}</p>
-          <div class="shopping-card-footer">
-            <p class="shopping-card-author">${author.trim()}</p> 
-            <ul class="shopping-card-shoplist">
-                <li class="">
-                  <a target="_blank" href="${amazon_product_url}" rel="noopener noreferrer nofollow">
-                <img class="shopping-link-amazon" srcset="
-                  ${amazonImg1x},
-                  ${amazonImg2x}" 
-                  src="${amazonImg1x}" alt="Amazon"/>
-                </a>
-              </li>
-              <li class="">
-                <a target="_blank" href="${
-                  apple.url
-                }" rel="noopener noreferrer nofollow">
-                  <img loading="lazy" class="shopping-link-apple" srcset=" 
-                  ${appleImg1x},
-                  ${appleImg2x}" 
-                  src="${appleImg1x}" alt="Apple" />
-                </a>
-              </li>
-           </ul>             
+            <div class="shopping-card-footer">
+              <p class="shopping-card-author">${author.trim()}</p> 
+              <ul class="shopping-card-shoplist">
+                  <li class="shopping-card-link-hover">
+                    <a target="_blank" href="${amazon_product_url}" rel="noopener noreferrer nofollow">
+                  <img class="shopping-link-amazon" srcset="
+                    ${amazonImg1x},
+                    ${amazonImg2x}" 
+                    src="${amazonImg1x}" alt="Amazon"/>
+                  </a>
+                </li>
+                <li class="shopping-card-link-hover">
+                  <a target="_blank" href="${
+                    apple.url
+                  }" rel="noopener noreferrer nofollow">
+                    <img loading="lazy" class="shopping-link-apple" srcset=" 
+                    ${appleImg1x},
+                    ${appleImg2x}" 
+                    src="${appleImg1x}" alt="Apple" />
+                  </a>
+                </li>
+              </ul>             
+            </div>
           </div>
       </li>
-              `
+    `
     )
     .join('');
 
