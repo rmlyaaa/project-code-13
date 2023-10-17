@@ -11,7 +11,7 @@
   align-items: center;
   height: 38px;
   width: 38px;
-  border: 1px solid #111111;
+  border: 1px solid var(--text-color);
   border-radius: 50%;
   font-weight: 700;
   font-size: 18px;
@@ -23,7 +23,7 @@
     align-items: center;
     height: 38px;
     width: 38px;
-    border: 1px solid #111111;
+    border: 1px solid var(--text-color);
     border-radius: 50%;
     font-weight: 700;
     font-size: 18px;
@@ -37,10 +37,10 @@
 
   .tui-page-btn.tui-first,
   .tui-page-btn.tui-prev {
-    color: #ffffff;
+    color: var(--primary-back-color);
     cursor: pointer;
-    background: #111111;
-    border-color: #111111;
+    background: var(--text-color);
+    border-color: var(--text-color);
   }
 
   @media screen and (min-width: 768px) {
@@ -51,10 +51,10 @@
 
 .tui-page-btn.tui-first,
 .tui-page-btn.tui-prev {
-  color: #ffffff;
+  color: var(--primary-back-color);
   cursor: pointer;
-  background: #111111;
-  border-color: #111111;
+  background: var(--text-color);
+  border-color: var(--text-color);
 }
 
 .tui-page-btn.tui-prev {
@@ -76,15 +76,15 @@
 
 .tui-page-btn.tui-first:active,
 .tui-page-btn.tui-prev:active {
-  color: #eac645;
+  color: var(--dec-color);
 }
 
 .tui-page-btn.tui-next,
 .tui-page-btn.tui-last {
-  color: #111111;
+  color: var(--text-color);
   cursor: pointer;
-  background: #eac645;
-  border-color: #111111;
+  background: var(--dec-color);
+  border-color: var(--text-color);
 }
 
 .tui-page-btn.tui-next {
@@ -102,33 +102,33 @@
 
 .tui-page-btn.tui-next:active,
 .tui-page-btn.tui-last:active {
-  color: #ffffff;
+  color: var(--primary-back-color);
 }
 
 .tui-page-btn.tui-is-disabled.tui-first,
 .tui-page-btn.tui-is-disabled.tui-prev {
-  color: $paragraph-colour;
+  color: var(--sec-text-color);
   cursor: pointer;
-  background: #111111;
-  border-color: #111111;
+  background: var(--text-color);
+  border-color: var(--text-color);
   filter: none;
 }
 
 .tui-page-btn.tui-is-disabled.tui-next,
 .tui-page-btn.tui-is-disabled.tui-last {
-  color: $paragraph-colour;
+  color: var(--sec-text-color);
   cursor: pointer;
-  background: #eac645;
-  border-color: #111111;
+  background: var(--dec-color);
+  border-color: var(--text-color);
   filter: none;
 }
 
 .tui-pagination .tui-is-selected,
 .tui-pagination strong {
-  color: #ffffff;
+  color: var(--primary-back-color);
   cursor: pointer;
-  background: #111111;
-  border-color: #111111;
+  background: var(--text-color);
+  border-color: var(--text-color);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -189,7 +189,6 @@
   display: inline-block;
   width: 12px;
   height: 12px;
-
   border: 2px solid;
   border-left: none;
   border-top: none;
@@ -278,16 +277,16 @@
 
 .tui-page-btn.tui-next-is-ellip.tui-last-child:hover,
 .tui-page-btn.tui-prev-is-ellip.tui-first-child:hover {
-  background-color: #ffffff;
+  background-color: var(--primary-back-color);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .tui-page-btn.tui-next-is-ellip.tui-last-child:active {
-  background-color: #eac645;
-  color: #ffffff;
+  background-color: var(--dec-color);
+  color: var(--primary-back-color);
 }
 
 .tui-page-btn.tui-prev-is-ellip.tui-first-child:active {
-  background-color: #111111;
-  color: #ffffff;
+  background-color: var(--text-color);
+  color: var(--primary-back-color);
 }

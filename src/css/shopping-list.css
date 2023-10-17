@@ -15,7 +15,7 @@
 }
 
 .shopping-list-title {
-  color: #111;
+  color: var(--text-color);
   font-family: DM Sans;
   font-size: 32px;
   line-height: 1.19;
@@ -24,7 +24,7 @@
 }
 
 .shopping-list-title-span {
-  color: #4f2ee8;
+  color: var(--dec-color-blue);
 }
 
 .shopping-list {
@@ -37,7 +37,7 @@
 .shopping-item {
   border-radius: 16px;
   border: 2px solid rgba(79, 46, 232, 0.4);
-  background: #fff;
+  background: var(--primary-back-color);
   gap: 14px;
   padding: 14px;
   display: flex;
@@ -45,8 +45,8 @@
 }
 
 .shopping-list-card {
-  background: #fff;
-  border: 2px solid #4f2ee866;
+  background: var(--primary-back-color);
+  border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
   gap: 14px;
   padding: 14px;
@@ -74,7 +74,7 @@
   text-transform: uppercase;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: #111;
+  color: var(--text-color);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12;
@@ -87,7 +87,7 @@
   letter-spacing: 0.03em;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: #b4afaf;
+  color: var(--sec-text-color);
   margin-top: 4px;
   font-size: 12px;
   font-weight: 400;
@@ -106,7 +106,7 @@
   -webkit-line-clamp: 3;
   max-height: 3.9em;
   text-overflow: ellipsis;
-  color: #111;
+  color: var(--text-color);
   -webkit-box-orient: vertical;
   margin-top: 8px;
   font-size: 14px;
@@ -129,7 +129,7 @@
   letter-spacing: -0.04em;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: #b4afaf;
+  color: var(--sec-text-color);
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
@@ -168,9 +168,9 @@
   z-index: 10;
   width: 28px;
   height: 28px;
-  fill: #fff;
+  fill: var(--primary-back-color);
   cursor: pointer;
-  background-color: #4f2ee8;
+  background-color: var(--dec-color-blue);
   border: none;
   border-radius: 50%;
   justify-content: center;
@@ -209,7 +209,7 @@
   max-width: 265px;
   height: 36px;
   letter-spacing: -0.28px;
-  color: #0009;
+  color: rgba(0, 0, 0, 0.60);
   padding: 0 10px;
   font-size: 14px;
   font-weight: 400;
