@@ -16,34 +16,26 @@
   font-weight: 700;
   font-size: 18px;
   color: inherit;
+}
 
+@media screen and (min-width: 768px) {
   .tui-page-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 38px;
-    width: 38px;
-    border: 1px solid var(--text-color);
-    border-radius: 50%;
-    font-weight: 700;
-    font-size: 18px;
-    color: inherit;
-
-    @media screen and (min-width: 768px) {
-      height: 44px;
-      width: 44px;
-    }
+    height: 44px;
+    width: 44px;
   }
+}
 
+.tui-page-btn.tui-first,
+.tui-page-btn.tui-prev {
+  color: var(--primary-back-color);
+  cursor: pointer;
+  background: var(--text-color);
+  border-color: var(--text-color);
+}
+
+@media screen and (min-width: 768px) {
   .tui-page-btn.tui-first,
   .tui-page-btn.tui-prev {
-    color: var(--primary-back-color);
-    cursor: pointer;
-    background: var(--text-color);
-    border-color: var(--text-color);
-  }
-
-  @media screen and (min-width: 768px) {
     height: 44px;
     width: 44px;
   }
@@ -59,13 +51,11 @@
 
 .tui-page-btn.tui-prev {
   margin-right: 6px;
+}
 
+@media screen and (min-width: 768px) {
   .tui-page-btn.tui-prev {
-    margin-right: 6px;
-
-    @media screen and (min-width: 768px) {
-      margin-right: 16px;
-    }
+    margin-right: 16px;
   }
 }
 
@@ -89,8 +79,9 @@
 
 .tui-page-btn.tui-next {
   margin-left: 6px;
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .tui-page-btn.tui-next {
     margin-left: 16px;
   }
 }
@@ -150,8 +141,9 @@
   border-top: none;
   border-radius: 2px;
   transform: rotate(0.37turn);
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .tui-ico-prev::before {
     height: 16px;
     width: 16px;
     border: 3px solid;
@@ -173,8 +165,9 @@
   border-top: none;
   border-radius: 2px;
   transform: rotate(0.37turn);
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .tui-ico-first::after {
     height: 16px;
     width: 16px;
     border: 3px solid;
@@ -194,8 +187,9 @@
   border-top: none;
   border-radius: 2px;
   transform: translateX(10px) rotate(0.37turn);
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .tui-ico-first::before {
     height: 16px;
     width: 16px;
     border: 3px solid;
@@ -216,8 +210,9 @@
   border-bottom: none;
   border-radius: 2px;
   transform: rotate(0.37turn);
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .tui-ico-next::before {
     height: 16px;
     width: 16px;
     border: 3px solid;
@@ -239,8 +234,9 @@
   border-bottom: none;
   border-radius: 2px;
   transform: rotate(0.37turn);
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .tui-ico-last::before {
     height: 16px;
     width: 16px;
     border: 3px solid;
@@ -260,8 +256,9 @@
   border-bottom: none;
   border-radius: 2px;
   transform: translateX(-10px) rotate(0.37turn);
-
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .tui-ico-last::after {
     height: 16px;
     width: 16px;
     border: 3px solid;
