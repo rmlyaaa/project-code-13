@@ -92,7 +92,6 @@ function createTopBooksMarkup(fullCategoryName, arrCategories) {
           books
             .map(({ book_image, author, title, _id }) => {
               return `<li class="book-item" id="${_id}">
-              <a href="" class="book-link link">
                 <div class="book-thumb-img">
                   <img class="book-img" src="${book_image}" alt="${title}" loading="lazy"/>
                   <div class="overlay">
@@ -103,7 +102,6 @@ function createTopBooksMarkup(fullCategoryName, arrCategories) {
                   <h3 class="book-name">${title}</h3>
                   <p class="book-autor">${author}</p>
                 </div>
-              </a>
             </li>`;
             })
             .join('') +
