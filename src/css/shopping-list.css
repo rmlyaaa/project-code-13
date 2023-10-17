@@ -54,6 +54,10 @@
   position: relative;
 }
 
+.dark .shopping-list-card {
+  background-color: #111;
+}
+
 .shopping-card-img {
   min-width: 100px;
   height: 142px;
@@ -80,6 +84,10 @@
   line-height: 1.12;
   display: block;
   overflow: hidden;
+}
+
+.dark .shopping-card-title {
+  color: #fff;
 }
 
 .shopping-card-category {
@@ -114,6 +122,10 @@
   line-height: 1.29;
   display: -webkit-box;
   overflow: hidden;
+}
+
+.dark .shopping-card-description {
+  color: #fff;
 }
 
 .shopping-card-footer {
@@ -155,14 +167,24 @@
   height: 11px;
 }
 
+.dark .shopping-link-amazon {
+  filter: brightness(0) invert(1);
+}
+
 .shopping-link-apple {
   width: 16px;
   height: 16px;
+  filter: grayscale(100%);
 }
 
 .shopping-card-link-hover:hover,
 .shopping-card-link-hover:focus {
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
+}
+
+.dark .shopping-link-amazon:hover,
+.dark .shopping-link-apple:hover {
+  filter: drop-shadow(0px 3px 3px rgba(225, 225, 225, 0.35));
 }
 
 .shopping-pagination {
@@ -214,7 +236,7 @@
   max-width: 265px;
   height: 36px;
   letter-spacing: -0.28px;
-  color: rgba(0, 0, 0, 0.60);
+  color: rgba(0, 0, 0, 0.6);
   padding: 0 10px;
   font-size: 14px;
   font-weight: 400;
@@ -239,7 +261,6 @@
     padding: 0px 32px;
   }
 }
-
 
 @media screen and (min-width: 768px) {
   .shopping-list-container {
