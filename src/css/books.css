@@ -3,6 +3,20 @@
   margin: 0;
 }
 
+.book-category-name {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.19;
+  letter-spacing: -1.28px;
+  color: var(--primary-colour);
+  margin-bottom: 40px;
+  
+}
+
+.book-category-name-accent {
+  color: var(--accent-color);
+}
+
 @media screen and (max-width: 375px) {
   .books-categories-sections {
     max-width: 100%;
@@ -21,20 +35,14 @@
     margin-top: 60px;
     max-width: 704px;
   }
+  .book-category-name {
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -1.92px;
+  }
 }
 
-.book-category-name {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.08; /* 108.333% */
-  letter-spacing: -1.92px;
-  margin-bottom: 40px;
-  color: var(--primary-colour);
-}
 
-.book-category-name-accent {
-  color: var(--accent-color);
-}
 
 .book-category-subname {
   margin-bottom: 18px;
