@@ -10,12 +10,12 @@
 @import url('./support-ukraine');
 @import url('./shopping-list.css');
 @import url('./theme.css');
-@import url("./shopping-list.css");
-@import url("./psgination.css");
-@import url("./go-top.css");
+@import url('./shopping-list.css');
+@import url('./psgination.css');
+@import url('./go-top.css');
 /* Modal */
 @import url('./modal.css');
-
+@import url('./mob-menu.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -25,13 +25,13 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --primary-back-color: #FFFFFF;
-  --sec-primary-back-color: #F6F6F6;
+  --primary-back-color: #ffffff;
+  --sec-primary-back-color: #f6f6f6;
   --primary-back-color: #ffffff;
   --sec-primary-back-color: #f6f6f6;
   --dark-back-color: #111111;
   --sec-dark-back-color: #202024;
-  --dec-color: #EAC645;
+  --dec-color: #eac645;
   --color-secondary: #2a2c2d;
   --dec-color-yellow: #eac645;
   --dec-color-blue: #4f2ee8;
@@ -65,7 +65,6 @@ body {
   }
 }
 
-
 @media only screen and (min-width: 768px) and (max-width: 1439px) {
   .my-container {
     min-width: 768px;
@@ -74,7 +73,6 @@ body {
     padding-right: 32px;
   }
 }
-
 
 .my-container {
   max-width: 375px;

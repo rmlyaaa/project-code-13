@@ -4,9 +4,11 @@
   height: 64px;
   padding: 18px 20px;
   margin: 0 auto;
-  background-color: var(--theme-background);
+  background-color: #fff;
   border: 1.5px solid #111;
   border-radius: 0 0 8px 8px;
+  position: relative;
+  z-index: 4;
 }
 
 .nav {
@@ -29,7 +31,7 @@
 
 @media screen and (max-width: 767px) {
   .header-cont {
-    max-width: 428px;
+    max-width: 767px;
     margin-left: auto;
     margin-right: auto;
   }
