@@ -38,7 +38,7 @@
 
 .book-category-subname {
   margin-bottom: 18px;
-  color: var(--primary-colour);
+  color: #b4afaf;
 
   line-height: 1.71;
   letter-spacing: 0.42px;
@@ -78,14 +78,14 @@
   row-gap: 40px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 767px) {
   .book-list {
     --indent-quantity: 0;
     --item: 1;
     margin-bottom: 20px;
   }
 }
-@media screen and (min-width: 767px) and (max-width: 1439px) {
+@media screen and (min-width: 1439px) {
   .book-list {
     --indent-quantity: 2;
     --item: 3;
