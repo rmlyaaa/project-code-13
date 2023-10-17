@@ -106,7 +106,7 @@ function createTopBooksMarkup(fullCategoryName, arrCategories) {
             })
             .join('') +
           `</ul>
-          <button type="button" class="see-more-btn btn" data-category="${list_name}" aria-label="more books in category">See more</button>
+          <button type="button" class="see-more-btn btn" data-category="${list_name}" aria-label="See more">See more</button>
         </div>`
         );
       })
