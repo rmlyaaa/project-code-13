@@ -8,7 +8,7 @@ const USER_KEY = 'AUTHENTCATION_USER';
 const refs = {
   aForm: document.querySelector('.authorization-form'),
   aBtn: document.querySelector('.authorization-form-btn'),
-  modal: document.querySelector('[authorization-data-modal]'),
+  modal: document.querySelector('.backdrop-authorization'),
   profileUser: document.querySelector('.authorization-user'),
   profileButton: document.querySelector('.profile-btn'),
   profileExit: document.querySelector('.log-out'),

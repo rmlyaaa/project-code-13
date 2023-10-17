@@ -1,8 +1,8 @@
 const refs = {
   button: document.querySelector('.authorization-form-btn'),
-  labelName: document.querySelector('[label-name]'),
-  signUp: document.querySelector('[sign-up]'),
-  signIn: document.querySelector('[sign-in]'),
+  labelName: document.querySelector('.label-name'),
+  signUp: document.querySelector('.sign-up'),
+  signIn: document.querySelector('.sign-in'),
 };
 
 const input = refs.labelName.firstElementChild;
