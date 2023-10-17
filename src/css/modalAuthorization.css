@@ -7,13 +7,17 @@ body {
 }
 
 .backdrop-authorization {
-  z-index: 4;
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100%;
-  background-color: #502ee8bb;
+  background: radial-gradient(
+    189.32% 190.93% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #fff 100%
+  );
   opacity: 1;
   visibility: visible;
   transition: opacity var(--animation-speed), visibility var(--animation-speed);
@@ -35,7 +39,7 @@ body {
   padding: 40px 20px;
   position: relative;
   transform: scale(1);
-  max-width: 291px;
+  max-width: 335px;
   width: 100%;
   height: auto;
   border-radius: 18px;
@@ -116,8 +120,8 @@ body {
   font-weight: 700;
   line-height: 1.125; /* 112.5% */
   letter-spacing: -0.16px;
-  width: 225px;
-  height: 44px;
+  width: 295px;
+  height: 50px;
   border-radius: 40px;
   border: 2px solid #111;
   background-color: transparent;
@@ -189,7 +193,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .modal-authorization {
-    max-width: 495px;
+    max-width: 579px;
     padding: 80px 40px 40px 40px;
   }
 
@@ -226,8 +230,8 @@ body {
     font-size: 18px;
     line-height: 1.33333; /* 133.333% */
     letter-spacing: -0.18px;
-    width: 395px;
-    height: 58px;
+    width: 499px;
+    height: 64px;
   }
 
   .authorization-form-input:not(:placeholder-shown) + .label-name {
@@ -296,8 +300,8 @@ body {
   }
 
   .authorization-user {
-    width: 160px;
-    height: 37px;
+    width: 184px;
+    height: 45px;
     border-radius: 36px;
     background-color: #4f2ee8;
     display: flex;

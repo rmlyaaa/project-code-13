@@ -15,7 +15,7 @@ const refs = {
   profileName: document.querySelector('.user-name'),
   profileUserMob: document.querySelector('.mob-user'),
   profileButtonMob: document.querySelector('.mob-profile-btn'),
-  profileExitMob: document.querySelector('[log-out]'),
+  profileExitMob: document.querySelector('.mob-log-out'),
   profileNameMob: document.querySelector('.mob-user-name'),
 };
 
@@ -75,7 +75,6 @@ function signIn() {
       toggleLoader();
       refs.modal.classList.toggle('is-hidden-authorization');
       loadBDBookList();
-      refs.profileExitMob.classList.remove('hiden-user-auth');
       markupUser();
       refs.aForm.reset();
     })
@@ -88,8 +87,9 @@ function signIn() {
 
 function logOut() {
   if (localStorage.getItem(USER_KEY)) {
-    refs.profileExitMob.classList.add('hiden-user-auth');
     refs.profileExit.classList.toggle('hiden-user-auth');
+
+    refs.profileExitMob.classList.add('hiden-user-auth');
     logOutUser().then(() => {
       localStorage.removeItem(USER_KEY);
       markupUser();
@@ -103,6 +103,7 @@ function markupUser() {
   refs.profileUserMob.classList.toggle('hiden-user-auth');
   refs.profileButtonMob.classList.toggle('hiden-user-auth');
   if (localStorage.getItem(USER_KEY)) {
+    refs.profileExitMob.classList.remove('hiden-user-auth');
     refs.profileName.innerHTML = JSON.parse(
       localStorage.getItem(USER_KEY)
     ).displayName.split(' ')[0];
