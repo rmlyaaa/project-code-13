@@ -2,9 +2,9 @@ import './change-authorization';
 import './authorization';
 
 const refs = {
-  openModalBtn: document.querySelector('[authorization-data-modal-open]'),
-  closeModalBtn: document.querySelector('[authorization-data-modal-close]'),
-  modal: document.querySelector('[authorization-data-modal]'),
+  openModalBtn: document.querySelector('.profile-btn'),
+  closeModalBtn: document.querySelector('.modal-close-button'),
+  modal: document.querySelector('.backdrop-authorization'),
   aForm: document.querySelector('.authorization-form'),
   openModalBtnMenu: document.querySelector('.mob-profile-btn'),
 };
