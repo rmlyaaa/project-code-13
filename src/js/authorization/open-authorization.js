@@ -6,9 +6,11 @@ const refs = {
   closeModalBtn: document.querySelector('[authorization-data-modal-close]'),
   modal: document.querySelector('[authorization-data-modal]'),
   aForm: document.querySelector('.authorization-form'),
+  openModalBtnMenu: document.querySelector('.mob-profile-btn'),
 };
 
 refs.openModalBtn.addEventListener('click', toggleModal);
+refs.openModalBtnMenu.addEventListener('click', toggleModal);
 refs.closeModalBtn.addEventListener('click', toggleModal);
 refs.modal.addEventListener('click', onBackdropClose);
 

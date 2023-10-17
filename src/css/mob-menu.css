@@ -1,14 +1,17 @@
 .modal-mob {
   padding-left: 20px;
-  padding-top: 64px;
   padding-bottom: 20px;
   position: fixed;
   z-index: 3;
   width: 100vw;
   height: 100vh;
-  transform: translateY(-64px);
   background: url('../img/mob-menu/Menu-min.png') no-repeat;
   background-size: cover;
+  transform: translateX(0);
+  transition: all 250ms linear;
+}
+.modal-mob.is-hidden-mob {
+  transform: translateX(100%);
 }
 .is-hidden-mob {
   display: none;
@@ -75,7 +78,7 @@
   flex-wrap: wrap;
   gap: 16px;
 }
-.mob-nav-item {
+.mob-nav-link {
   color: #fff;
   font-family: DM Sans;
   font-size: 14px;
@@ -84,20 +87,24 @@
   line-height: 18px; /* 128.571% */
   letter-spacing: -0.56px;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
 }
-.mob-nav-item[aria-curent='page'] {
+.mob-shop-icon {
+  fill: #fff;
+  margin-left: 6px;
+}
+.mob-nav-link[aria-current='page'] {
+  border-radius: 36px;
   text-align: center;
   padding: 8px 16px;
   color: #111;
   font-weight: 700;
   background-color: #eac645;
 }
-.mob-nav-link {
-  display: flex;
-  align-items: center;
-}
-.mob-shop-icon {
-  fill: #fff;
+
+.mob-nav-link[aria-current='page'] .mob-shop-icon {
+  fill: #111;
   margin-left: 6px;
 }
 .log-out {

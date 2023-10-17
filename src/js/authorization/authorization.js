@@ -13,11 +13,16 @@ const refs = {
   profileButton: document.querySelector('.profile-btn'),
   profileExit: document.querySelector('.log-out'),
   profileName: document.querySelector('.user-name'),
+  profileUserMob: document.querySelector('.mob-user'),
+  profileButtonMob: document.querySelector('.mob-profile-btn'),
+  profileExitMob: document.querySelector('[log-out]'),
+  profileNameMob: document.querySelector('.mob-user-name'),
 };
 
 refs.aForm.addEventListener('submit', register);
 refs.profileUser.addEventListener('click', dropMenu);
 refs.profileExit.addEventListener('click', logOut);
+refs.profileExitMob.addEventListener('click', logOut);
 
 checkUser();
 
@@ -70,6 +75,7 @@ function signIn() {
       toggleLoader();
       refs.modal.classList.toggle('is-hidden-authorization');
       loadBDBookList();
+      refs.profileExitMob.classList.remove('hiden-user-auth');
       markupUser();
       refs.aForm.reset();
     })
@@ -82,6 +88,7 @@ function signIn() {
 
 function logOut() {
   if (localStorage.getItem(USER_KEY)) {
+    refs.profileExitMob.classList.add('hiden-user-auth');
     refs.profileExit.classList.toggle('hiden-user-auth');
     logOutUser().then(() => {
       localStorage.removeItem(USER_KEY);
@@ -93,11 +100,17 @@ function logOut() {
 function markupUser() {
   refs.profileUser.classList.toggle('hiden-user-auth');
   refs.profileButton.classList.toggle('hiden-user-auth');
+  refs.profileUserMob.classList.toggle('hiden-user-auth');
+  refs.profileButtonMob.classList.toggle('hiden-user-auth');
   if (localStorage.getItem(USER_KEY)) {
     refs.profileName.innerHTML = JSON.parse(
+      localStorage.getItem(USER_KEY)
+    ).displayName.split(' ')[0];
+    refs.profileNameMob.innerHTML = JSON.parse(
       localStorage.getItem(USER_KEY)
     ).displayName.split(' ')[0];
     return;
   }
   refs.profileName.innerHTML = 'Name';
+  refs.profileNameMob.innerHTML = 'Name';
 }
