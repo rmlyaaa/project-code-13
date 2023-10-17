@@ -8,9 +8,9 @@
   <title>Bookshelf</title>
   
 
-  <script type="module" crossorigin src="/project-code-13/assets/index-7f9e4f1c.js"></script>
-  <link rel="modulepreload" crossorigin href="/project-code-13/assets/support-ukraine-e07603f5.js">
-  <link rel="stylesheet" href="/project-code-13/assets/support-ukraine-cdfa1051.css">
+  <script type="module" crossorigin src="/project-code-13/assets/index-19e3bca3.js"></script>
+  <link rel="modulepreload" crossorigin href="/project-code-13/assets/mob-menu-a8022725.js">
+  <link rel="stylesheet" href="/project-code-13/assets/mob-menu-257e4853.css">
 </head>
 
 <body>
@@ -97,6 +97,39 @@
   </div>
 
 </header>
+  <div class="modal-mob is-hidden-mob">
+    <div class="mob-user hiden-user-auth">
+        <img srcset="/project-code-13/assets/user-2x-c0ee5fd9.png 2x" src="data:image/png;base64,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" alt="" width="37"
+            height="37" class="mob-user-image">
+        <p class="mob-user-name">Name</p>
+    </div>
+    <button type="button" class="mob-profile-btn" authorization-data-modal-open>Sign up
+        <svg class="mob-profile-btn-icon" width="20" height="20">
+            <use href="/project-code-13/assets/icons-096b5c3b.svg#icon-arrow-right"></use>
+        </svg>
+    </button>
+    <ul class="mob-nav-list">
+        <li class="mob-nav-item "> <!---nav-item-current-->
+            <div class="mob-nav-item-container"> <a href="index.html"
+                    class="mob-nav-link nav-link link homepage">Home</a> </div>
+        </li>
+        <li class="mob-nav-item">
+            <div class="mob-nav-item-container"> <a href="shoping.html" class="mob-nav-link nav-link link">
+                    Shoping list
+                    <svg class="mob-shop-icon" height="19" width="19">
+                        <use href="/project-code-13/assets/icons-096b5c3b.svg#icon-shop-list"></use>
+                    </svg>
+                </a>
+            </div>
+        </li>
+    </ul>
+
+    <button type="button" class="mob-profile-btn log-out hiden-user-auth" log-out>Log out
+        <svg class="mob-profile-btn-icon" width="20" height="20">
+            <use href="/project-code-13/assets/icons-096b5c3b.svg#icon-arrow-right"></use>
+        </svg>
+    </button>
+</div>
   <div class="backdrop-authorization is-hidden-authorization" authorization-data-modal>
     <div class="modal-authorization">
         <button class="modal-close-button" type="button" authorization-data-modal-close>
