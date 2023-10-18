@@ -2,7 +2,7 @@
   <div class="header-cont">
     <nav class="nav">
       <div class="all-logo">
-        <a href="./index.html" class="header-logo link">
+        <a href="./index.html" class="header-logo link" aria-label="logo">
           <svg height="24" width="24" class="logo-icon">
             <use href="./img/icons.svg#icon-logo"></use>
           </svg>
@@ -16,12 +16,12 @@
         <li class="nav-item">
           <!---nav-item-current-->
           <div class="nav-item-container">
-            <a href="index.html" class="nav-link link homepage">Home</a>
+            <a href="index.html" class="nav-link link homepage" aria-label="homepage link">Home</a>
           </div>
         </li>
         <li class="nav-item">
           <div class="nav-item-container">
-            <a href="shoping.html" class="nav-link link">
+            <a href="shoping.html" class="nav-link link" aria-label="shoping list link">
               Shoping list
               <svg class="shop-icon" height="19" width="19">
                 <use href="./img/icons.svg#icon-shop-list"></use>
@@ -34,11 +34,12 @@
       <div class="right-menu">
         <div class="toggle-switch">
           <span>
-            <label for="them-switch" class="switch">
-              <span class="visually-hidden">light theme and dark theme switcher</span> 
-              <input id="them-switch" type="checkbox" class="switch-input" />
+            <label for="them-switch" class="switch" aria-label="label for switch theme">
+              <span class="visually-hidden">light theme and dark theme switcher</span>
+              <input id="them-switch" type="checkbox" class="switch-input" aria-label="switch light dark theme" />
+
               <span class="round slider"></span>
-              
+
             </label>
           </span>
         </div>
