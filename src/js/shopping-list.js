@@ -128,21 +128,21 @@ function renderMarkupEmptyShopList() {
   const markup = `
   <div class="shopping-list-empty">
   <p class="shopping-text-empty">This page is empty, add some books and proceed to order.</p>
-  <picture><sourse srcset="
-  srcset="
-      ${emptyTab1x} 1x,
-      ${emptyTab2x} 2x
-        "
-  media="(min-width: 768px)"
-        />
-   <img class="hopping-img-empty" loading="lazy"
-    srcset="
-      ${emptyMob1x} 1x,
-      ${emptyMob2x} 2x
-        "
-    src="${emptyMob1x}" alt="Empty Shopping list"
-  "></sourse>
-  </picture>
+  <picture>
+  <source srcset="
+    ${emptyTab1x} 1x,
+    ${emptyTab2x} 2x
+  " media="(min-width: 768px)" />
+  <img class="hopping-img-empty"
+       srcset="
+         ${emptyMob1x} 1x,
+         ${emptyMob2x} 2x
+       "
+       src="${emptyMob1x}"
+       alt="Empty Shopping list"
+       loading="lazy"
+  />
+</picture>
   </div>`;
 
   divEl.innerHTML = markup;
