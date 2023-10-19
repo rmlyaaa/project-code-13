@@ -158,8 +158,8 @@
 }
 @media screen and (min-width: 768px) {
   .tui-ico-prev::before {
-    height: 16px;
-    width: 16px;
+    height: 14px;
+    width: 14px;
     border: 3px solid;
     border-left: none;
     border-top: none;
@@ -182,8 +182,8 @@
 }
 @media screen and (min-width: 768px) {
   .tui-ico-first::after {
-    height: 16px;
-    width: 16px;
+    height: 14px;
+    width: 14px;
     border: 3px solid;
     border-left: none;
     border-top: none;
@@ -204,8 +204,8 @@
 }
 @media screen and (min-width: 768px) {
   .tui-ico-first::before {
-    height: 16px;
-    width: 16px;
+    height: 14px;
+    width: 14px;
     border: 3px solid;
     border-left: none;
     border-top: none;
@@ -227,8 +227,8 @@
 }
 @media screen and (min-width: 768px) {
   .tui-ico-next::before {
-    height: 16px;
-    width: 16px;
+    height: 14px;
+    width: 14px;
     border: 3px solid;
     border-right: none;
     border-bottom: none;
@@ -251,8 +251,8 @@
 }
 @media screen and (min-width: 768px) {
   .tui-ico-last::before {
-    height: 16px;
-    width: 16px;
+    height: 14px;
+    width: 14px;
     border: 3px solid;
     border-right: none;
     border-bottom: none;
@@ -273,8 +273,8 @@
 }
 @media screen and (min-width: 768px) {
   .tui-ico-last::after {
-    height: 16px;
-    width: 16px;
+    height: 14px;
+    width: 14px;
     border: 3px solid;
     border-right: none;
     border-bottom: none;
