@@ -2,6 +2,20 @@ body {
   margin: 0;
 }
 
+:root {
+  --bg-color: #f6f6f6;
+  --second-color: #111;
+  --text-color: rgba(17, 17, 17, 0.5);
+  --btn-text-xolor: #f3f3f3;
+}
+
+/* :root {
+  --bg-color: #202024;
+  --second-color: #f6f6f6;
+  --text-color: rgba(246, 246, 246, 0.5);
+  --btn-text-xolor: #202024;
+} */
+
 .no-scroll {
   overflow: hidden;
 }
@@ -16,7 +30,7 @@ body {
   background-color: #502ee8bb;
   opacity: 1;
   visibility: visible;
-  transition: opacity var(--animation-speed), visibility var(--animation-speed);
+  transition: opacity 250ms linear, visibility 250ms linear;
   display: flex;
   align-items: center;
 }
@@ -39,10 +53,10 @@ body {
   width: 100%;
   height: auto;
   border-radius: 18px;
-  border: 2px solid #111;
-  background: #f6f6f6;
+  border: 2px solid var(--second-color);
+  background: var(--bg-color);
   margin: 0 auto;
-  transition: all var(--animation-speed);
+  transition: all 250ms linear;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +70,7 @@ body {
   top: 14px;
   background-color: transparent;
   border: none;
-  transition: transform var(--animation-speed);
+  transition: transform 250ms linear;
 }
 
 .modal-close-button:hover {
@@ -67,11 +81,6 @@ body {
   width: 14px;
   height: 14px;
   stroke: var(--second-color);
-}
-
-.modal-close-icon:hover,
-.modal-close-icon:focus {
-  stroke: #4f2ee8;
 }
 
 .authorization-form {
@@ -90,7 +99,7 @@ body {
   position: absolute;
   top: 16px;
   left: 24px;
-  color: #111;
+  color: var(--second-color);
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
@@ -98,7 +107,7 @@ body {
   line-height: 1.125; /* 112.5% */
   letter-spacing: -0.16px;
   text-transform: uppercase;
-  transition: transform var(--animation-speed);
+  transition: transform 250ms linear;
 }
 
 .authorization-form-label:focus-within > .label-name,
@@ -109,7 +118,7 @@ body {
 .authorization-form-input {
   padding-left: 24px;
   padding-right: 40px;
-  color: #111;
+  color: var(--second-color);
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
@@ -119,7 +128,7 @@ body {
   width: 225px;
   height: 44px;
   border-radius: 40px;
-  border: 2px solid #111;
+  border: 2px solid var(--second-color);
   background-color: transparent;
 }
 
@@ -133,15 +142,15 @@ body {
   right: 24px;
   width: 18px;
   height: 18px;
-  stroke: #111;
+  stroke: var(--second-color);
 }
 
 .authorization-form-btn {
   width: 294px;
   height: 50px;
   border-radius: 40px;
-  background-color: #111;
-  color: #f3f3f3;
+  background-color: var(--second-color);
+  color: var(--btn-text-xolor);
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
@@ -149,14 +158,6 @@ body {
   line-height: 1.125; /* 112.5% */
   letter-spacing: -0.16px;
   text-transform: uppercase;
-  transition: transform var(--animation-speed);
-}
-
-.wrapper-switch-p:hover,
-.wrapper-switch-p:focus,
-.authorization-form-btn:hover,
-.authorization-form-btn:focus {
-  transform: scale(1.05);
 }
 
 .wrapper-switch {
@@ -166,7 +167,7 @@ body {
 }
 
 .wrapper-switch-p {
-  color: rgba(17, 17, 17, 0.5);
+  color: var(--text-color);
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
@@ -177,7 +178,6 @@ body {
   cursor: pointer;
   border: none;
   background-color: transparent;
-  transition: transform var(--animation-speed);
 }
 
 .action-auth {
@@ -275,24 +275,18 @@ body {
     letter-spacing: -0.56px;
     display: flex;
     padding: 12px 14px;
-    transition: box-shadow var(--animation-speed);
   }
 
   .profile-btn.log-out {
     background-color: #fff;
-    color: var(--primary-colour);
-    position: absolute;
-    z-index: 5;
+    color: #111;
+    position: relative;
+    z-index: 2;
   }
 
   .profile-btn-icon {
     margin-left: 88px;
     stroke: #eac645;
-  }
-
-  .profile-btn:hover,
-  .profile-btn:focus {
-    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
   }
 
   .authorization-user {
@@ -327,4 +321,75 @@ body {
     pointer-events: none;
     visibility: hidden;
   }
+}
+
+@media screen and (max-width: 767px) {
+  .authorization-user {
+    width: 160px;
+    height: 37px;
+    border-radius: 36px;
+    background-color: #4f2ee8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 4px 12px;
+  }
+  
+  .profile-btn.log-out {
+    background-color: #fff;
+    color: #111;
+    position: relative;
+    z-index: 2;
+  }
+
+  .profile-btn-icon {
+    margin-left: 88px;
+    stroke: #eac645;
+  }
+
+
+  .user-name {
+    color: #fff;
+    font-family: DM Sans;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.44px;
+  }
+
+  .hiden-user-auth {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .user-icon {
+    fill: #fff;
+  }
+
+  .profile-btn {
+    width: 184px;
+    height: 45px;
+    border-radius: 18px;
+    border: 1.5px solid #111;
+    background-color: #4f2ee8;
+    color: #fff;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.28571; /* 128.571% */
+    letter-spacing: -0.56px;
+    display: flex;
+    padding: 12px 14px;
+  }
+
+  .profile-btn-icon {
+    margin-left: 88px;
+    stroke: #eac645;
+  }
+
 }
